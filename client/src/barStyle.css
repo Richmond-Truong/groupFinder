@@ -1,4 +1,9 @@
 /* Added Styles for the side bar */
+:root{
+    --main-highlight-color: #4286f4;
+    --main-higlight-color-alt: white;
+    --main-background-color: #111; 
+}
 
 body {
     font-family: "Lato", sans-serif;
@@ -12,8 +17,8 @@ body {
     position: absolute;
     text-align: center;
     font-size: 25px;
-    background-color: #111;
-    color: white;
+    background-color: var(--main-background-color);
+    color: var(--main-higlight-color-alt);
 }
 
 .sidenav {
@@ -23,7 +28,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: var(--main-background-color);
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -42,7 +47,7 @@ body {
     font-size: 25px;
     position: relative;
     top:20px; 
-    color: #4286f4;
+    color: var(--main-highlight-color);
     display: block;
 }
   
@@ -53,7 +58,7 @@ body {
 }
   
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: var(--main-higlight-color-alt);
 }
   
 .main {
@@ -74,7 +79,7 @@ body {
 
 .topnav a {
     float: right;
-    color: #f2f2f2;
+    color: var(--main-higlight-color-alt);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -82,11 +87,11 @@ body {
 }
   
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: var(--main-higlight-color-alt);
     color: black;
 }
   
 .topnav a.active {
-    background-color: #4286f4;
-    color: white;
+    background-color: var(--main-highlight-color);
+    color: var(--main-higlight-color-alt);
 }
