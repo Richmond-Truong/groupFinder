@@ -33,9 +33,20 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.sideNavButton{
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  background-color: white;
+}
+
 .sidenav {
   height: 100%;
-  width: 200px;
+  width: 0px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -43,6 +54,14 @@ body {
   background-color: #111;
   overflow-x: hidden;
   padding-top: 20px;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 .sidenav a {
@@ -85,7 +104,7 @@ p.ex1 {
 }
 
 .topnav a {
-  float: left;
+  float: right;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -99,7 +118,7 @@ p.ex1 {
 }
 
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: #4286f4;
   color: white;
 }
 
