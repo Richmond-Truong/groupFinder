@@ -33,9 +33,9 @@ class SideBar extends Component{
       <div className="sideNavButton" href="javascript:void(0)" key="2" onClick={this.open_side_bar.bind(this)}>&#9776;</div>,
       ];
     }
-  }
+}
 
-  class TopBar extends Component{ 
+class TopBar extends Component{ 
     render() { 
       return ( 
       <div className="topnav">
