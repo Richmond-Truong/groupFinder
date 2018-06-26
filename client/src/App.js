@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './barStyle.css'
 import SideBar from './sideBars.js';
 
 

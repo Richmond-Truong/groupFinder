@@ -1,0 +1,92 @@
+/* Added Styles for the side bar */
+
+body {
+    font-family: "Lato", sans-serif;
+}
+  
+.sideNavButton{
+    top: 5px;
+    left: 0;
+    width: 100px;
+    height: 0px;
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    background-color: #111;
+    color: white;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    position: relative;
+    top:20px; 
+    color: #4286f4;
+    display: block;
+}
+  
+.sidenav img {
+    position: relative; 
+    top: 0px;
+    left: 0; 
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+}
+  
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+  
+  
+/* Styling for the top bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  
+.topnav a.active {
+    background-color: #4286f4;
+    color: white;
+}

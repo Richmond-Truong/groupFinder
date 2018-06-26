@@ -9,6 +9,6 @@ class TopBar extends Component{
         </div>
         );
       }
-    }
+}
 
 export default TopBar;
