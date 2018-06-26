@@ -22,7 +22,9 @@ class SideBar extends Component{
       return [ 
       
       <div id="mySidenav" className="sidenav" style={this.state}  key="1">
-        <a href="javascript:void(0)" className="closebtn" onClick={this.close_side_bar}>&times;</a>
+        <button href="javascript:void(0)" className="closebtn" onClick={this.close_side_bar}> 
+          &times;
+        </button>
         <img className="logo" alt="" src={require('./images/logo.png')}/> 
         <a href="#About" id="about">About</a>
         <a href="#Projects" id="projects">Projects</a>
