@@ -1,22 +1,27 @@
-var http = require("http");
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
+var express = require('express');
+var app = express(); 
+//Url of mongodb. Set to my personal one ATM
+const mUrl = 'mongodb+srv://admin:admin@rt-cluster-fkxzi.mongodb.net/test?retryWrites=true';
 
-//URL of mongodb. Set to my personal one ATM
-const url = 'mongodb+srv://admin:admin@rt-cluster-fkxzi.mongodb.net/test?retryWrites=true';
-
-
-//just a simple http server that you can ping
-http.createServer(function (request, response) {
-    // Send the HTTP header 
-    // HTTP Status: 200 : OK
-    // Content Type: text/plain
-    response.writeHead(200, {'Content-Type': 'text/plain'});
+app.get('/home', function (req, res) {
+    console.log("Got a GET request for the homepage");
+    res.send('Hello GET1');
+ })
+ 
+app.get('/user/:userId', function (req, res) {
+    console.log(`req.param.userId = ${req.params.userId}`);
+    getData("users",{username: req.params.userId}, result =>{
+        res.send(JSON.stringify(result));
+    })
     
-    // Send the response body as "Hello World"
-    response.end('Hello World test2\n');
- }).listen(8081);
+})
 
+var server = app.listen(8081, function(){
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log(`server is listening on ${host} , ${port}`);
+});
 
 /*********************************************
 * Takes collection name and insert object
@@ -25,7 +30,7 @@ http.createServer(function (request, response) {
 * callbacks false when insertion fails
 *********************************************/
 function insert(colN, insObj, callback){
-    MongoClient.connect(url, function(err, client) {
+    MongoClient.connect(mUrl, function(err, client) {
         if(err){ 
             throw err;
             callback(false);
@@ -43,6 +48,7 @@ function insert(colN, insObj, callback){
         callback(true);
      }); 
 }
+
 /*********************************************
 * Takes query and colleciton name as input
 * does the query on the collection
@@ -50,7 +56,7 @@ function insert(colN, insObj, callback){
 * callbacks false when query fails
 *********************************************/
 function getData(colN, query, callback){
-    MongoClient.connect(url, function(err, client) {
+    MongoClient.connect(mUrl, function(err, client) {
         if(err){ 
             throw err;
             callback(false);
