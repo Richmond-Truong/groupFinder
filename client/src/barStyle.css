@@ -31,6 +31,7 @@ body {
     background-color: var(--main-background-color);
     overflow-x: hidden;
     padding-top: 20px;
+    transition: 0.5s;
 }
 
 .sidenav .closebtn{
