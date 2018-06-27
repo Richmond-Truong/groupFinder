@@ -5,8 +5,8 @@ class Post extends Component{
         return [
             <div className="post"> 
                 <div className="Title"> Sample Post</div>
-                <div className="Text"> Richmond is gay</div> 
-                <div className="Username"> Your Mom </div>
+                <div className="Text"> Sample post info</div> 
+                <div className="Title"> Sample User</div>
             </div>
         ]
     }
