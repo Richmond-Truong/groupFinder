@@ -9,7 +9,7 @@ import Page from './posts.js';
 class HomePage extends Component{
   render() { 
     return [
-      <SideBar key="1"/>, 
+      <SideBar key='1'/>, 
       <Page key='2'/>
     ]
   }
