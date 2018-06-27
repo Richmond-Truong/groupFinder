@@ -6,6 +6,7 @@ class TopBar extends Component{
         <div className="topnav">
           <a href="#Settings">Settings</a>
           <a className="active">Username</a>
+          <a href="active" onClick = {() => alert('click')}>Login</a>
         </div>
         );
       }
