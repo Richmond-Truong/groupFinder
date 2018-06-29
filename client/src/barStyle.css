@@ -6,11 +6,12 @@
 }
   
 .sideNavButton{
+    z-index: 1;
     top: 5px;
-    left: 0;
+    left: 0%;
     width: 50px;
     height: 0px;
-    position: absolute;
+    position: fixed;
     text-align: center;
     font-size: 25px;
     background-color: var(--main-background-color);
@@ -21,7 +22,7 @@
     height: 100%;
     width: 0px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     background-color: var(--main-background-color);
@@ -70,6 +71,11 @@
   
 /* Styling for the top bar */
 .topnav {
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: fixed;
     overflow: hidden;
     background-color: #333;
 }
