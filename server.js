@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 const mUrl = 'mongodb+srv://admin:admin@rt-cluster-fkxzi.mongodb.net/test?retryWrites=true';
 const userT = "users"
 
-app.get('/home', function (req, res) {
+app.get('/', function (req, res) {
     console.log("Got a GET request for the homepage");
     res.send('Hello GET1');
  })
