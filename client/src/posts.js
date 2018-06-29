@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-
+import Modal from 'react-modal';
 
 var postCount = 0; 
 
@@ -34,6 +34,22 @@ class Page extends Component{
         this.addPost = this.addPost.bind(this)
     }
 
+    state = {
+        modalOn : null
+    }
+
+    openModal = (name) =>{
+        this.setState({modalOn : name});
+    }
+
+    closeModal = () =>{
+        this.setState({modalOn: null});
+    }
+
+    isModalOpen = (name) =>{
+        return (name === this.state.modalOn);
+    }
+
     addPost(user, title, text){
         this.posts_list.push(new Post(user, title, text).render())
         postCount = postCount+1;
@@ -44,7 +60,14 @@ class Page extends Component{
         this.addPost("Sample User", "Title2", "Some sample text")
         console.log(this.posts_list)
         return [
+          
             <div className="page" key="1">
+                <Modal
+                    isOpen={this.isModalOpen("createPost")}
+                    onRequestClose={this.closeModal}
+                    id = "createPost">
+                    <h1> test </h1>
+                </Modal>
                 {this.posts_list}
             </div> 
         ]
