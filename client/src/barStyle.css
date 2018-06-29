@@ -5,16 +5,13 @@
     --main-background-color: #111; 
 }
 
-body {
-    font-family: "Lato", sans-serif;
-}
-  
 .sideNavButton{
+    z-index: 1;
     top: 5px;
-    left: 0;
+    left: 0%;
     width: 50px;
     height: 0px;
-    position: absolute;
+    position: fixed;
     text-align: center;
     font-size: 25px;
     background-color: var(--main-background-color);
@@ -25,13 +22,14 @@ body {
     height: 100%;
     width: 0px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     background-color: var(--main-background-color);
     overflow-x: hidden;
     padding-top: 20px;
     transition: 0.5s;
+    text-align: center;
 }
 
 .sidenav .closebtn{
@@ -54,7 +52,7 @@ body {
 .sidenav a {
     padding: 6px 6px 6px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 200%;
     position: relative;
     top:20px; 
     color: var(--main-highlight-color);
@@ -64,27 +62,24 @@ body {
 .sidenav img {
     position: relative; 
     top: 0px;
-    left: 0; 
 }
   
 .sidenav a:hover {
     color: var(--main-higlight-color-alt);
 }
   
-.main {
-    margin-left: 200px; /* Same as the width of the sidenav */
-}
-  
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-  
   
 /* Styling for the top bar */
 .topnav {
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: fixed;
     overflow: hidden;
     background-color: #333;
+    display:inline-block;
+    padding-right:18px;
 }
 
 .topnav a {
@@ -93,7 +88,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 120%;
 }
   
 .topnav a:hover {
