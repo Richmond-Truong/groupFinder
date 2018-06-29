@@ -7,17 +7,14 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 //Url of mongodb. Set to my personal one ATM
 const mUrl = 'mongodb+srv://admin:admin@rt-cluster-fkxzi.mongodb.net/test?retryWrites=true';
 const userT = "users"
-
+const postT = "posts"
 app.get('/home', function (req, res) {
     console.log("Got a GET request for the homepage");
     res.send('Hello GET1');
  })
 
  /*********************************************
-* Takes collection name and insert object
-* Inserts insObj into collection
-* callbacks true when inserted successful
-* callbacks false when insertion fails
+* get user infor of userId
 *********************************************/
 app.get('/user/:userId', function (req, res) {
     console.log(`req.param.userId = ${req.params.userId}`);
@@ -36,23 +33,37 @@ app.get('/user/:userId', function (req, res) {
     })
 });
 
+ /*********************************************
+* get posts
+*********************************************/
+app.get('/post', function (req, res) {
+    console.log(`req.param.userId = ${req.params.userId}`);
+    getPosts(result =>{
+        console.log(result);
+        res.status(200);
+        res.send(result);
+    })
+});
+
 /*********************************************
-* Takes collection name and insert object
-* Inserts insObj into collection
-* callbacks true when inserted successful
-* callbacks false when insertion fails
+* post to post will add post into database
 *********************************************/
 app.post('/post', function(req, res){
     var title = req.body.title;
     var description = req.body.description;
     var tags = req.body.tags;
+    var date = Date.now();
     console.log(`title = ${title} description = ${description}`);
     if(title === undefined || description === undefined || tags === undefined){
         res.status(400);
         res.send("missing title");
     }else{
-        res.status(200);
-        res.send("all good");
+        insert(postT, {"title" : title,"description" : description,"tags" : tags, "date" : date}, result =>{
+            if(result === true){
+                res.status(200);
+                res.send("Inserted post into database");
+            }
+        });
     }
 });
 
@@ -104,6 +115,31 @@ function getData(colN, query, callback){
         const collection = db.collection(colN);
         console.log(`query = ${JSON.stringify(query)}`);
         collection.find(query).toArray(function (err, result){
+            if(err){ 
+                throw err;
+                callback(false);
+            } 
+            console.log(`query returned = ${JSON.stringify(result)}`);
+            client.close();
+            callback(result);
+        });
+     
+    });
+}
+
+/*********************************************
+* returns posts from newest to oldest
+*********************************************/
+function getPosts(callback){
+    MongoClient.connect(mUrl, function(err, client) {
+        if(err){ 
+            throw err;
+            callback(false);
+        } 
+        const db = client.db("groupFinder");
+        const collection = db.collection(postT);
+        var sortParm = {date: -1}
+        collection.find().sort(sortParm).toArray(function (err, result){
             if(err){ 
                 throw err;
                 callback(false);
