@@ -1,7 +1,7 @@
 html, body{
     height: 100%;
     width: 100%;
-    background-image: url('./images/background.jpg');
+    overflow: hidden;
 }
 .page {
     z-index: 0;
@@ -10,6 +10,9 @@ html, body{
     height: 100%;
     align-content: center;
     display:inline-block;
+    overflow: scroll;
+    background-image: url('./images/background.jpg');
+    margin-top: 50px;
 }
 
 .pic {

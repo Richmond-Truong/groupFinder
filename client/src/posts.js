@@ -40,11 +40,13 @@ class Page extends Component{
     }
 
     render() { 
-        this.addPost("Sample User", "Title", "Some sample text")
-        this.addPost("Sample User", "Title2", "Some sample text")
-        this.addPost("Sample User", "Title2", "Some sample text")
-        this.addPost("Sample User", "Title2", "Some sample text")
-        this.addPost("Sample User", "Title2", "Some sample text")
+        this.addPost("Sample User", "Title", "Some sample text");
+        this.addPost("Sample User", "Title2", "Some sample text");
+        this.addPost("Sample User", "Title2", "Some sample text");
+        this.addPost("Sample User", "Title2", "Some sample text");
+        this.addPost("Sample User", "Title2", "Some sample text");
+        this.addPost("Sample User", "Title2", "Some sample text");
+        this.addPost("Sample User", "Title2", "Some sample text");
         console.log(this.posts_list)
         return [
             <div className="page" key="1">
