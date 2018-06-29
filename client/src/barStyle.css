@@ -4,10 +4,6 @@
     --main-higlight-color-alt: white;
     --main-background-color: #111; 
 }
-
-body {
-    font-family: "Lato", sans-serif;
-}
   
 .sideNavButton{
     top: 5px;
@@ -32,6 +28,7 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
     transition: 0.5s;
+    text-align: center;
 }
 
 .sidenav .closebtn{
@@ -54,7 +51,7 @@ body {
 .sidenav a {
     padding: 6px 6px 6px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 200%;
     position: relative;
     top:20px; 
     color: var(--main-highlight-color);
@@ -64,20 +61,10 @@ body {
 .sidenav img {
     position: relative; 
     top: 0px;
-    left: 0; 
 }
   
 .sidenav a:hover {
     color: var(--main-higlight-color-alt);
-}
-  
-.main {
-    margin-left: 200px; /* Same as the width of the sidenav */
-}
-  
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
 }
   
   
@@ -93,7 +80,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 120%;
 }
   
 .topnav a:hover {
