@@ -10,7 +10,7 @@ class HomePage extends Component{
   render() { 
     return [
       <SideBar key='1'/>, 
-      <Page key='2'/>
+      <Page key='2' />
     ]
   }
 }
