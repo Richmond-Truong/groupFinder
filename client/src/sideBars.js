@@ -18,6 +18,7 @@ class SideBar extends Component{
     }
   
     render() { 
+
       return [ 
       
       <div id="mySidenav" className="sidenav" style={this.state}  key="1">

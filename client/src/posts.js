@@ -55,6 +55,16 @@ class Page extends Component{
         postCount = postCount+1;
     }
 
+    loadData() {
+        fetch('https://groupfinder1.herokuapp.com/post')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({data: data })
+                console.log(this.data);
+        })
+            .catch(err => console.error(this.props.url, err.toString()))
+    }
+
     render() { 
         this.addPost("Sample User", "Title", "Some sample text");
         this.addPost("Sample User", "Title2", "Some sample text");
@@ -70,7 +80,9 @@ class Page extends Component{
         this.addPost("Sample User", "Title2", "Some sample text");
         this.addPost("Sample User", "Title2", "Some sample text");
         this.addPost("Sample User", "Title2", "Some sample text");
-        console.log(this.posts_list)
+        console.log(this.posts_list); 
+        this.loadData();
+
         return [
           
             <div className="page" key="1">
