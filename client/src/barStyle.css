@@ -101,10 +101,6 @@ body {
     color: black;
 }
 
-.topnav a:visited {
-    color: chartreuse;
-}
-  
 .topnav a.active {
     background-color: var(--main-highlight-color);
     color: var(--main-higlight-color-alt);
