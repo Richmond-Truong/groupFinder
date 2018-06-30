@@ -9,7 +9,7 @@ class SideBar extends Component{
     }
   
     open_side_bar() {
-      this.setState({width: '20%'})
+      this.setState({width: '15%'})
     }
   
     close_side_bar() {

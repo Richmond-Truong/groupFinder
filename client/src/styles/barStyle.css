@@ -1,9 +1,5 @@
 /* Added Styles for the side bar */
-:root{
-    --main-highlight-color: #4286f4;
-    --main-higlight-color-alt: white;
-    --main-background-color: #111; 
-}
+@import "root.css";
 
 .sideNavButton{
     z-index: 1;
@@ -29,6 +25,7 @@
     overflow-x: hidden;
     padding-top: 20px;
     transition: 0.5s;
+    min-width: 200px;
     text-align: center;
 }
 
