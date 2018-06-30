@@ -1,8 +1,11 @@
+@import "root.css";
+
 html, body{
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
+
 .page {
     z-index: 0;
     position: absolute;
