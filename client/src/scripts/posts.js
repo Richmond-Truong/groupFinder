@@ -19,7 +19,7 @@ class Post extends Component{
                 <div className="Text"> {this.postText}</div> 
                 <div className="Title"> {this.userName}</div>
                 <div className="pic">
-                    <img alt="" src={require('./images/sample_user.jpg')} width="100" height="100"/>
+                    <img alt="" src={require('./../images/sample_user.jpg')} width="100" height="100"/>
                 </div>
             </div>
             )
@@ -60,7 +60,6 @@ class Page extends Component{
             .then(response => response.json())
             .then(data => {
                 this.setState({data: data })
-                console.log(this.data);
         })
             .catch(err => console.error(this.props.url, err.toString()))
     }

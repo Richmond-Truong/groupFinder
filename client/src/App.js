@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import './barStyle.css'
-import './postStyle.css'
-import SideBar from './sideBars.js';
-import Page from './posts.js';
+import './styles/barStyle.css'
+import './styles/postStyle.css'
+import SideBar from './scripts/sideBars';
+import Page from './scripts/posts';
 
 
 class HomePage extends Component{

@@ -25,7 +25,7 @@ class SideBar extends Component{
         <button href="javascript:void(0)" className="closebtn" onClick={this.close_side_bar}> 
           &times;
         </button>
-        <img className="logo" alt="" src={require('./images/logo.png')}/> 
+        <img className="logo" alt="" src={require('./../images/logo.png')}/> 
         <a href="#About" id="about">About</a>
         <a href="#Projects" id="projects">Projects</a>
         <a href="#Contact" id="contact">Contact</a> 
