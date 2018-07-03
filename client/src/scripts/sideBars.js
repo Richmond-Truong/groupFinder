@@ -9,11 +9,11 @@ class SideBar extends Component{
     }
   
     open_side_bar() {
-      this.setState({width: '15%'})
+      this.setState({width: '15%', minWidth:'200px'})
     }
   
     close_side_bar() {
-      this.setState({width: '0%'})
+      this.setState({width: '0%', minWidth:'0px'})
       
     }
   
