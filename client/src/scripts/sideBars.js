@@ -31,7 +31,7 @@ class SideBar extends Component{
         <a href="#Contact" id="contact">Contact</a> 
       </div>,
       <TopBar key='2'/>,
-      <div className="sideNavButton" href="javascript:void(0)" key='3' onClick={this.open_side_bar.bind(this)}>&#9776;</div>,
+      <div className="sideNavButton" href="javascript:void(0)" key='3' onClick={this.open_side_bar}>&#9776;</div>,
       ];
     }
 }

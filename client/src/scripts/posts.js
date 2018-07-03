@@ -3,7 +3,30 @@ import Modal from 'react-modal';
 
 var postCount = 0; 
 
+class Comment extends Component{
+    /*
+    A class to represent the comments made to a posting. 
+    Contains a user, details and position to refer to the 
+    number of indents to include when displaying. 
+    In addition there is children to refer to any reponses 
+    made to a comment. 
+    */
+    constructor(user, position, text) {
+        super();
+        this.userName = user; 
+        this.pos = position;
+        this.postText = text;
+        this.children = [];
+    }
+
+}
+
 class Post extends Component{
+    /*
+    A class tp represent a psoting for a project. 
+    Includes a user, title and details about the 
+    project. 
+    */
 
     constructor(user, title, text) {
         super();
@@ -28,6 +51,10 @@ class Post extends Component{
 }
 
 class Page extends Component{
+    /*
+    A container for all the posting for a project. Contains functions 
+    for adding a post and to retrieve data from the datbase. 
+    */
     constructor(prop) {
         super(prop);
         this.posts_list = [];
