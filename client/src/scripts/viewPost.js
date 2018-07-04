@@ -10,19 +10,20 @@ class Comment extends Component{
   In addition there is children to refer to any reponses 
   made to a comment. 
   */
-  constructor(user, position, text) {
+  constructor(user, position, text, child_list) {
       super();
       this.userName = user; 
       this.pos = {left: position};
       this.postText = text;
-      this.children = [];
+      this.children = child_list;
   }
 
   render() {
       return (
-          <div className="post" style={this.pos}> 
+          <div className="comment" style={this.pos}> 
               <div className="user"> {this.userName}</div>
-              <div className="Text"> {this.postText}</div> 
+              <div className="Text"> {this.postText}</div>
+              {this.children} 
           </div>
           )
   }
@@ -36,16 +37,17 @@ class PostPage extends Component{
       this.addComment = this.addComment.bind(this)
     }
 
-    addComment(user, pos, text){
-      this.comment_list.push(new Comment(user, pos, text).render())
+    addComment(user, pos, text, list){
+      this.comment_list.push(new Comment(user, pos, text, list).render())
     }
 
     render() { 
-        this.addComment("user", '100px', 'testeregrt');
+        this.addComment("user", '100px', 'testeregrt', [new Comment("SDDFG", "100px", "SDFGD", [new Comment("SDDFG", "100px", "SDFGD", []).render()]).render(), new Comment("SDDFG", "100px", "SDFGD", []).render()]);
 
         return [
             <div className="page" key="1">
               {new Post('sdsfs', 'sfsd f', 'sdfsfsdfsd').render()}
+              <div style={ {height:'100px'}}/>
               {this.comment_list}
             </div> 
         ]
