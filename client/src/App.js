@@ -3,7 +3,7 @@ import './App.css';
 import './styles/barStyle.css'
 import './styles/postStyle.css'
 import SideBar from './scripts/sideBars';
-import Page from './scripts/posts';
+import ProjectPage from './scripts/viewProjects';
 import PostPage from './scripts/viewPost';
 
 
