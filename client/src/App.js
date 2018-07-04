@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import './styles/barStyle.css'
 import './styles/postStyle.css'
-import SideBar from './scripts/sideBars';
+import UI from './scripts/UI';
 import ProjectPage from './scripts/viewProjects';
 import PostPage from './scripts/viewPost';
 
@@ -10,7 +10,7 @@ import PostPage from './scripts/viewPost';
 class HomePage extends Component{
   render() { 
     return [
-      <SideBar key='1'/>, 
+      <UI key='1'/>, 
       <PostPage key='2' />
     ]
   }
