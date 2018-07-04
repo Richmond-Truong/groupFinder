@@ -4,13 +4,14 @@ import './styles/barStyle.css'
 import './styles/postStyle.css'
 import SideBar from './scripts/sideBars';
 import Page from './scripts/posts';
+import PostPage from './scripts/viewPost';
 
 
 class HomePage extends Component{
   render() { 
     return [
       <SideBar key='1'/>, 
-      <Page key='2' />
+      <PostPage key='2' />
     ]
   }
 }
