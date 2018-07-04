@@ -12,6 +12,7 @@ html, body{
     margin-bottom: 10px;
     background: white;
     max-width: 80%;
+    border-radius: 10px;
 }
 
 .comment .user{
