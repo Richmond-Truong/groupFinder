@@ -31,7 +31,10 @@ class SideBar extends Component{
         <a href="#Contact" id="contact">Contact</a> 
       </div>,
       <TopBar key='2'/>,
-      <div className="sideNavButton" href="javascript:void(0)" key='3' onClick={this.open_side_bar}>&#9776;</div>,
+      <div style={{width:'0px', height:'0px'}}>
+        <div className="sideNavButton" href="javascript:void(0)" key='3' onClick={this.open_side_bar}>&#9776;</div>
+        <img class="homeButton" src={require('./../images/home.png')}/>
+      </div>
       ];
     }
 }
