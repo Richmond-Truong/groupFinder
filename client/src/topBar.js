@@ -1,6 +1,5 @@
 import React, { Component }  from 'react';
 import Modal from 'react-modal';
-import Loginwindow from './loginWindow.js';
 class TopBar extends Component{ 
   constructor(props) {
     super(props);
@@ -16,28 +15,41 @@ class TopBar extends Component{
 
   }
 
+  /*
+    Function used to open the modal window
+  */
   openModal() {
     this.setState({modalOn : true});
   }
 
+  /*
+    Function used to close the modal window
+  */
   closeModal() {
     this.setState({modalOn : false});
   }
 
+  /*
+    Function used update the username and password state whenever there 
+    is an entry to the text boxes
+  */
   handleInputChange(event){
       const target = event.target;
       const name = event.target.name;
       this.setState({[name]: target.value})
   }
 
+  /*
+    Function used to test the submit button
+  */
   handleSubmit(event) {
       alert('Username: ' + this.state.username + ' Password: ' + this.state.password);
       event.preventDefault();
   }
 
-      render() { 
+  render() { 
         return ( 
-        <div className="topnav">
+          <div className="topnav">
           <a href="#Settings">Settings</a>
           <a className="active">Username</a>
           <a onClick = {this.openModal}>Login</a>
@@ -45,7 +57,7 @@ class TopBar extends Component{
                     overlayClassName="Overlay"
                     isOpen={this.state.modalOn}
                     onRequestClose={this.closeModal}
-            >
+          >
                     <button className="close-modal-btn" onClick = {this.closeModal}> &#9747; </button>
                     <h1> Sign in </h1>
                     <form onSubmit={this.handleSubmit}>
@@ -63,7 +75,7 @@ class TopBar extends Component{
                         <input class='attemptLogin' type="submit" value="Login"/>
                     </form>
                     <a href >New user? Click here to register</a>
-            </Modal>
+        </Modal>
         </div>
         );
       }
