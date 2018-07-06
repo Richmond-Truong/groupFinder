@@ -17,6 +17,7 @@ class Post extends Component{
 
     render() {
         return (
+            
             <div className="post" style={this.state}> 
                 <div className="Title"> {this.postTitle}</div>
                 <div className="Text"> {this.postText}</div> 

@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import Modal from 'react-modal';
 import Post from './posts';
+import { Link } from 'react-router-dom'
 
 class Page extends Component{
     /*
@@ -30,7 +31,7 @@ class Page extends Component{
     }
 
     addPost(user, title, text){
-        this.posts_list.push(new Post(user, title, text).render())
+        this.posts_list.push(<Link to="/post"> {new Post(user, title, text).render()} </Link>)
     }
 
     loadData() {

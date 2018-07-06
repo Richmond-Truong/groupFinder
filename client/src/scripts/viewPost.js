@@ -47,7 +47,7 @@ class PostPage extends Component{
         return [
             <div className="page" key="1">
               {new Post('sdsfs', 'sfsd f', 'sdfsfsdfsd').render()}
-              <div style={ {height:'100px'}}/>
+              <div style={ {height:'70px'}}/>
               {this.comment_list}
             </div> 
         ]
