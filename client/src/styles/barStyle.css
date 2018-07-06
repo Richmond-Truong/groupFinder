@@ -114,7 +114,7 @@
     background-color: var(--main-higlight-color-alt);
     color: black;
 }
-  
+
 .topnav a.active {
     background-color: var(--main-highlight-color);
     color: var(--main-higlight-color-alt);
