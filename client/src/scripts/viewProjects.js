@@ -11,6 +11,7 @@ class Page extends Component{
     constructor(prop) {
         super(prop);
         this.posts_list = [];
+        this.KEY = 0;
         this.addPost = this.addPost.bind(this)
     }
 
@@ -31,14 +32,16 @@ class Page extends Component{
     }
 
     addPost(user, title, text){
-        this.posts_list.push(<Link to="/post"> {new Post(user, title, text).render()} </Link>)
+        this.KEY = this.KEY + 1;
+        this.posts_list.push(<Link key={this.KEY.toString()} to={`/post/${user}`}> {new Post(user, title, text).render()} </Link>)
     }
 
     loadData() {
         fetch('https://groupfinder1.herokuapp.com/post')
             .then(response => response.json())
             .then(data => {
-                this.setState({data: data })
+                //this.setState({data: data })
+                console.log(data)
         })
             .catch(err => console.error(this.props.url, err.toString()))
     }
@@ -61,9 +64,9 @@ class Page extends Component{
         console.log(this.posts_list); 
         this.loadData();
 
-        return [
+        return (
           
-            <div className="page" key="1">
+            <div className="page">
                 <Modal
                     isOpen={this.isModalOpen("createPost")}
                     onRequestClose={this.closeModal}
@@ -72,7 +75,7 @@ class Page extends Component{
                 </Modal>
                 {this.posts_list}
             </div> 
-        ]
+        )
     }
 }
 
