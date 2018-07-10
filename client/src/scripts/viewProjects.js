@@ -11,7 +11,6 @@ class Page extends Component{
     constructor(prop) {
         super(prop);
         this.posts_list = [];
-        this.state =  { Posts: this.posts_list} ;
         this.KEY = 0;
         this.addPost = this.addPost.bind(this)
         this.loadData();
@@ -37,6 +36,15 @@ class Page extends Component{
     addPost(user, title, text){
         this.KEY = this.KEY + 1;
         this.posts_list.push(<Link key={this.KEY.toString()} to={`/post/${user}`} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>)
+    }
+
+    createPost(user, title, text){
+
+    /*
+        Will create a post for rendering given the required fields. 
+    */
+        this.KEY = this.KEY + 1;
+        return <Link key={this.KEY.toString()} to={`/post/${user}`} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>;
     }
 
     loadData() {
