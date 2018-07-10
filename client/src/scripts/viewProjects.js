@@ -11,12 +11,15 @@ class Page extends Component{
     constructor(prop) {
         super(prop);
         this.posts_list = [];
+        this.state =  { Posts: this.posts_list} ;
         this.KEY = 0;
         this.addPost = this.addPost.bind(this)
+        this.loadData();
     }
 
     state = {
-        modalOn : null
+        modalOn : null,
+        data: []
     }
 
     openModal = (name) =>{
@@ -40,29 +43,19 @@ class Page extends Component{
         fetch('https://groupfinder1.herokuapp.com/post')
             .then(response => response.json())
             .then(data => {
-                //this.setState({data: data })
-                console.log(data)
+                var i;
+                for (i = 0; i < data.length; i++) {
+                    this.addPost(data[i]['tags'], data[i]['title'], data[i]['description']);
+                }
+                this.setState({data: this.posts_list})
         })
             .catch(err => console.error(this.props.url, err.toString()))
     }
 
     render() { 
         this.addPost("Sample User", "Title", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        console.log(this.posts_list); 
-        this.loadData();
+
+        console.log(this.posts_list.length);
 
         return (
           
@@ -73,7 +66,7 @@ class Page extends Component{
                     id = "createPost">
                     <h1> test </h1>
                 </Modal>
-                {this.posts_list}
+                {this.state.data}
             </div> 
         )
     }
