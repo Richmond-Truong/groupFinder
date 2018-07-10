@@ -1,5 +1,7 @@
 import React, { Component }  from 'react';
-import { Link } from 'react-router-dom'
+import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
+import Page from './viewProjects';
 
 class SideBar extends Component{
 
@@ -17,7 +19,7 @@ class SideBar extends Component{
       this.setState({width: '0%', minWidth:'0px'})
       
     }
-  
+    
     render() { 
 
       return [ 
@@ -40,12 +42,34 @@ class SideBar extends Component{
     }
 }
 
-class TopBar extends Component{ 
+class TopBar extends Component{
+    state = {
+      modalOn : null
+    }
+
+    openModal = (name) =>{
+        this.setState({modalOn : name});
+    }
+
+    closeModal = () =>{
+        this.setState({modalOn: null});
+    }
+
+    isModalOpen = (name) =>{
+        return (name === this.state.modalOn);
+    } 
     render() { 
       return ( 
       <div className="topnav">
+        <Modal
+          isOpen={() => this.isModalOpen("createPost")}
+          onRequestClose={this.closeModal}
+          id = "createPost">
+          <h1> test </h1>
+        </Modal>
         <a href="#Settings">Settings</a>
         <a className="active">Username</a>
+        <a onClick={() => this.openModal("createPost")}> Make Post</a>
       </div>
       );
     }

@@ -1,5 +1,4 @@
 import React, { Component }  from 'react';
-import Modal from 'react-modal';
 import Post from './posts';
 import { Link } from 'react-router-dom'
 
@@ -14,23 +13,6 @@ class Page extends Component{
         this.KEY = 0;
         this.addPost = this.addPost.bind(this)
     }
-
-    state = {
-        modalOn : null
-    }
-
-    openModal = (name) =>{
-        this.setState({modalOn : name});
-    }
-
-    closeModal = () =>{
-        this.setState({modalOn: null});
-    }
-
-    isModalOpen = (name) =>{
-        return (name === this.state.modalOn);
-    }
-
     addPost(user, title, text){
         this.KEY = this.KEY + 1;
         this.posts_list.push(<Link key={this.KEY.toString()} to={`/post/${user}`}> {new Post(user, title, text).render()} </Link>)
@@ -67,12 +49,6 @@ class Page extends Component{
         return (
           
             <div className="page">
-                <Modal
-                    isOpen={this.isModalOpen("createPost")}
-                    onRequestClose={this.closeModal}
-                    id = "createPost">
-                    <h1> test </h1>
-                </Modal>
                 {this.posts_list}
             </div> 
         )
