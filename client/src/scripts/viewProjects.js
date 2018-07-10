@@ -33,7 +33,7 @@ class Page extends Component{
 
     addPost(user, title, text){
         this.KEY = this.KEY + 1;
-        this.posts_list.push(<Link key={this.KEY.toString()} to={`/post/${user}`}> {new Post(user, title, text).render()} </Link>)
+        this.posts_list.push(<Link key={this.KEY.toString()} to={`/post/${user}`} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>)
     }
 
     loadData() {
