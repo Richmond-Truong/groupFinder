@@ -1,9 +1,11 @@
 const MongoClient = require('mongodb').MongoClient;
 var express = require('express');
+var cors = require('cors');
 var app = express(); 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(cors());
 //Url of mongodb. Set to my personal one ATM
 const mUrl = 'mongodb+srv://admin:admin@rt-cluster-fkxzi.mongodb.net/test?retryWrites=true';
 const userT = "users"
