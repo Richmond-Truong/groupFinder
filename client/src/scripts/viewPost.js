@@ -35,7 +35,7 @@ class PostPage extends Component{
 
     state = {
         modalOn : null,
-        data: {}
+        data: {'name': '', 'title': '', 'text':''}
     }
 
     constructor(prop) {
@@ -47,7 +47,6 @@ class PostPage extends Component{
     
     componentDidMount() {
         console.log(this.props.location.state);
-        const { handle } = this.props.match.params;
         this.setState({data: this.props.location.state})
     }
 
