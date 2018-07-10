@@ -44,13 +44,13 @@ class PostPage extends Component{
     render() { 
         this.addComment("user", '100px', 'testeregrt', [new Comment("SDDFG", "100px", "SDFGD", [new Comment("SDDFG", "100px", "SDFGD", []).render()]).render(), new Comment("SDDFG", "100px", "SDFGD", []).render()]);
         this.addComment("user", '100px', 'testeregrt', []);
-        return [
-            <div className="page" key="1">
+        return (
+            <div className="page">
               {new Post('sdsfs', 'sfsd f', 'sdfsfsdfsd').render()}
               <div style={ {height:'70px'}}/>
               {this.comment_list}
             </div> 
-        ]
+        )
     }
 
 }

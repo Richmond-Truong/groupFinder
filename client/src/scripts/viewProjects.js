@@ -38,7 +38,8 @@ class Page extends Component{
         Will create a post for rendering given the required fields. 
     */
         this.KEY = this.KEY + 1;
-        return <Link key={this.KEY.toString()} to={`/post/${user}`} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>;
+        var state_vars = {name: user,  title: title, text:text};
+        return <Link key={this.KEY.toString()} to={{pathname:`/post/${user}`, state: state_vars}} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>;
     }
 
     loadData() {
