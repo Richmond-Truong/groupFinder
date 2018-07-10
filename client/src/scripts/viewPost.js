@@ -18,6 +18,7 @@ class Comment extends Component{
       this.children = child_list;
   }
 
+
   render() {
       return (
           <div className="comment" style={this.pos}> 
@@ -31,10 +32,22 @@ class Comment extends Component{
 }
 
 class PostPage extends Component{
+
+    state = {
+        modalOn : null,
+        data: {'name': '', 'title': '', 'text':''}
+    }
+
     constructor(prop) {
       super(prop);
       this.comment_list = [];
       this.addComment = this.addComment.bind(this)
+    }
+
+    
+    componentDidMount() {
+        console.log(this.props.location.state);
+        this.setState({data: this.props.location.state})
     }
 
     addComment(user, pos, text, list){
@@ -44,13 +57,13 @@ class PostPage extends Component{
     render() { 
         this.addComment("user", '100px', 'testeregrt', [new Comment("SDDFG", "100px", "SDFGD", [new Comment("SDDFG", "100px", "SDFGD", []).render()]).render(), new Comment("SDDFG", "100px", "SDFGD", []).render()]);
         this.addComment("user", '100px', 'testeregrt', []);
-        return [
-            <div className="page" key="1">
-              {new Post('sdsfs', 'sfsd f', 'sdfsfsdfsd').render()}
+        return (
+            <div className="page">
+              {new Post(this.state['data']['name'], this.state['data']['title'], this.state['data']['text']).render()}
               <div style={ {height:'70px'}}/>
               {this.comment_list}
             </div> 
-        ]
+        )
     }
 
 }

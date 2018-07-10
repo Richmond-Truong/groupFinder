@@ -11,45 +11,47 @@ class Page extends Component{
         super(prop);
         this.posts_list = [];
         this.KEY = 0;
-        this.addPost = this.addPost.bind(this)
+        this.createPost = this.createPost.bind(this);
+        this.loadData();
     }
-    addPost(user, title, text){
+
+    addPost(user, title, text){}
+
+
+    state = {
+        data: [this.createPost("Sample User", "Title", "Some sample text")]
+    }
+
+    createPost(user, title, text){
+    /*
+        Will create a post for rendering given the required fields. 
+    */
         this.KEY = this.KEY + 1;
-        this.posts_list.push(<Link key={this.KEY.toString()} to={`/post/${user}`}> {new Post(user, title, text).render()} </Link>)
+        var state_vars = {name: user,  title: title, text:text};
+        return <Link key={this.KEY.toString()} to={{pathname:`/post/${user}`, state: state_vars}} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>;
     }
 
     loadData() {
         fetch('https://groupfinder1.herokuapp.com/post')
             .then(response => response.json())
             .then(data => {
-                //this.setState({data: data })
-                console.log(data)
+                var i;
+                for (i = 0; i < data.length; i++) {
+                    this.posts_list.push(this.createPost(data[i]['tags'], data[i]['title'], data[i]['description']));
+                }
+                this.setState({data: this.posts_list})
         })
             .catch(err => console.error(this.props.url, err.toString()))
     }
 
     render() { 
-        this.addPost("Sample User", "Title", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        console.log(this.posts_list); 
-        this.loadData();
 
         return (
           
             <div className="page">
+
                 {this.posts_list}
+
             </div> 
         )
     }
