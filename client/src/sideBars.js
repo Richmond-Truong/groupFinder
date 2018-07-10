@@ -1,5 +1,4 @@
 import React, { Component }  from 'react';
-import TopBar from './topBar.js';
 
 class SideBar extends Component{
 
@@ -10,11 +9,11 @@ class SideBar extends Component{
     }
   
     open_side_bar() {
-      this.setState({width: '200px'})
+      this.setState({width: '20%'})
     }
   
     close_side_bar() {
-      this.setState({width: '0px'})
+      this.setState({width: '0%'})
       
     }
   
@@ -30,10 +29,22 @@ class SideBar extends Component{
         <a href="#Projects" id="projects">Projects</a>
         <a href="#Contact" id="contact">Contact</a> 
       </div>,
-      <TopBar/>,
-      <div className="sideNavButton" href="javascript:void(0)" key="2" onClick={this.open_side_bar.bind(this)}>&#9776;</div>,
+      <TopBar key='2'/>,
+      <div className="sideNavButton" href="javascript:void(0)" key='3' onClick={this.open_side_bar.bind(this)}>&#9776;</div>,
       ];
     }
-  }
+}
+
+class TopBar extends Component{ 
+    render() { 
+      return ( 
+      <div className="topnav">
+        <a href="#Settings">Settings</a>
+        <a className="active">Username</a>
+      </div>
+      );
+    }
+}
+
 
 export default SideBar;
