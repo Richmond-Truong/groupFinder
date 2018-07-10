@@ -12,7 +12,6 @@ class Page extends Component{
         super(prop);
         this.posts_list = [];
         this.KEY = 0;
-        this.addPost = this.addPost.bind(this)
         this.createPost = this.createPost.bind(this);
         this.loadData();
     }
@@ -34,14 +33,6 @@ class Page extends Component{
         return (name === this.state.modalOn);
     }
 
-    addPost(user, title, text){
-    /*
-        Update the KEY counter and will add a new post to the post list. KEY are unique identifiers for each post.
-    */
-        this.KEY = this.KEY + 1;
-        this.posts_list.push(<Link key={this.KEY.toString()} to={`/post/${user}`} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>)
-    }
-
     createPost(user, title, text){
     /*
         Will create a post for rendering given the required fields. 
@@ -56,7 +47,7 @@ class Page extends Component{
             .then(data => {
                 var i;
                 for (i = 0; i < data.length; i++) {
-                    this.addPost(data[i]['tags'], data[i]['title'], data[i]['description']);
+                    this.posts_list.push(this.createPost(data[i]['tags'], data[i]['title'], data[i]['description']));
                 }
                 this.setState({data: this.posts_list})
         })
@@ -64,7 +55,6 @@ class Page extends Component{
     }
 
     render() { 
-        this.addPost("Sample User", "Title", "Some sample text");
 
         return (
           
