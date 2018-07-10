@@ -13,12 +13,13 @@ class Page extends Component{
         this.posts_list = [];
         this.KEY = 0;
         this.addPost = this.addPost.bind(this)
+        this.createPost = this.createPost.bind(this);
         this.loadData();
     }
 
     state = {
         modalOn : null,
-        data: []
+        data: [this.createPost("Sample User", "Title", "Some sample text")]
     }
 
     openModal = (name) =>{
@@ -34,12 +35,14 @@ class Page extends Component{
     }
 
     addPost(user, title, text){
+    /*
+        Update the KEY counter and will add a new post to the post list. KEY are unique identifiers for each post.
+    */
         this.KEY = this.KEY + 1;
         this.posts_list.push(<Link key={this.KEY.toString()} to={`/post/${user}`} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>)
     }
 
     createPost(user, title, text){
-
     /*
         Will create a post for rendering given the required fields. 
     */
@@ -62,8 +65,6 @@ class Page extends Component{
 
     render() { 
         this.addPost("Sample User", "Title", "Some sample text");
-
-        console.log(this.posts_list.length);
 
         return (
           
