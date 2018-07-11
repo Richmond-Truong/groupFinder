@@ -34,7 +34,7 @@ class SideBar extends Component{
       <TopBar key='2'/>,
       <div key='3' style={{width:'0px', height:'0px'}}>
         <div className="sideNavButton" href="javascript:void(0)" key='3' onClick={this.open_side_bar}>&#9776;</div>
-        <Link to='/' > <img className="homeButton" src={require('./../images/home.png')}></img> </Link>
+        <Link to='/main' > <img className="homeButton" src={require('./../images/home.png')}></img> </Link>
       </div>
       ];
     }
