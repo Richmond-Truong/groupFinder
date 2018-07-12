@@ -28,7 +28,7 @@ class Page extends Component{
     */
         this.KEY = this.KEY + 1;
         var state_vars = {name: user,  title: title, text:text};
-        return <Link key={this.KEY.toString()} to={{pathname:`/post/${user}`, state: state_vars}} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>;
+        return <Link key={this.KEY.toString()} to={{pathname:`/main/post/${user}`, state: state_vars}} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>;
     }
 
     loadData() {

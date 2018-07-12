@@ -4,7 +4,7 @@ class TopBar extends Component{
   constructor(props) {
     super(props);
     this.state = { 
-      modalOn : false,
+      modalOn : true,
       username: '',
       password: '' 
     };
@@ -49,10 +49,6 @@ class TopBar extends Component{
 
   render() { 
         return ( 
-          <div className="topnav">
-          <a href="#Settings">Settings</a>
-          <a className="active">Username</a>
-          <a onClick = {this.openModal}>Login</a>
           <Modal  className="login-modal"
                     overlayClassName="Overlay"
                     isOpen={this.state.modalOn}
@@ -76,7 +72,6 @@ class TopBar extends Component{
                     </form>
                     <a href >New user? Click here to register</a>
         </Modal>
-        </div>
         );
       }
 }
