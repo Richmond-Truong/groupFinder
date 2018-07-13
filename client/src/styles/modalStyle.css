@@ -200,7 +200,6 @@
 .new-post-modal input.postTitle:focus{
     width: 90%;
     border: 2px solid lightskyblue;
-    position: relative;
 }
 
 .new-post-modal textarea.postDescription{
