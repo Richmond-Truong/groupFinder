@@ -15,9 +15,6 @@ class Page extends Component{
         this.loadData();
     }
 
-    addPost(user, title, text){}
-
-
     state = {
         data: []
     }
