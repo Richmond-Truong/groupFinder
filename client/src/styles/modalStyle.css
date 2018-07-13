@@ -2,10 +2,10 @@
 
 .login-modal {
     position: fixed;
-    top:20%;
+    top:10%;
     left:25%;
     width:50%;
-    height: 600px;
+    height: 80%;
     border: 2px solid black;
     border-radius: 3px;
     background-color: white;
@@ -70,10 +70,10 @@
 }
 
 .login-modal h1 {
-    position: fixed;
+    position: absolute;
     margin-left: 25%;
-    top: 0%;
-    left: 10%;
+    top: -10%;
+    left: 0%;
 
 }
 
