@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import './styles/barStyle.css';
 import './styles/postStyle.css';
-import './styles/loginStyle.css'
+import './styles/modalStyle.css';
 import UI from './scripts/UI';
 import Main from './scripts/main';
 
