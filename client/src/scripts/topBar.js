@@ -1,10 +1,12 @@
 import React, { Component }  from 'react';
 import Modal from 'react-modal';
+
+
 class TopBar extends Component{ 
   constructor(props) {
     super(props);
     this.state = { 
-      modalOn : true,
+      modalOn : false,
       username: '',
       password: '' 
     };
@@ -48,31 +50,39 @@ class TopBar extends Component{
   }
 
   render() { 
-        return ( 
+        return [
+          <div className="topnav">
+            <a href="#Settings">Settings</a>
+            <a onClick={this.openModal}> Login </a>
+            <a className="active">Username</a>
+          </div>,
           <Modal  className="login-modal"
                     overlayClassName="Overlay"
                     isOpen={this.state.modalOn}
                     onRequestClose={this.closeModal}
           >
-                    <button className="close-modal-btn" onClick = {this.closeModal}> &#9747; </button>
-                    <h1> Sign in </h1>
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
-                            <input class='usernameField' placeholder="Username" type="text" onChange={this.handleInputChange}/> 
-                        </label>
-                        <br/>
-                        <br/>
-                        <label>
-                            <input class='passwordField' placeholder="Password" type="password" onChange={this.handleInputChange}/>
-                        </label>
-                        <br/>
-                        <input class='rememberMe' type="checkbox"/> <h2>Remember me </h2>
-                        <br/>
-                        <input class='attemptLogin' type="submit" value="Login"/>
-                    </form>
-                    <a href >New user? Click here to register</a>
+
+                      <button className="close-modal-btn" onClick = {this.closeModal}> &#9747; </button>
+                      <h1> Sign in </h1>
+                      <form onSubmit={this.handleSubmit}>
+                          <label>
+                              <input class='usernameField' placeholder="Username" type="text" onChange={this.handleInputChange}/> 
+                          </label>
+                          <br/>
+                          <br/>
+                          <label>
+                              <input class='passwordField' placeholder="Password" type="password" onChange={this.handleInputChange}/>
+                          </label>
+                          <br/>
+                          <input class='rememberMe' type="checkbox"/> <h2>Remember me </h2>
+                          <br/>
+                          <input class='attemptLogin' type="submit" value="Login"/>
+                      </form>
+                      <a href >New user? Click here to register</a>
+  
         </Modal>
-        );
+        ];
       }
 }
+
 export default TopBar;

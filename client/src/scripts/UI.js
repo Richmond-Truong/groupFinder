@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import TopBar from './topBar.js';
 
 class SideBar extends Component{
 
@@ -34,22 +35,22 @@ class SideBar extends Component{
       <TopBar key='2'/>,
       <div key='3' style={{width:'0px', height:'0px'}}>
         <div className="sideNavButton" href="javascript:void(0)" key='3' onClick={this.open_side_bar}>&#9776;</div>
-        <Link to='/main' > <img className="homeButton" src={require('./../images/home.png')}></img> </Link>
+        <Link to='/' > <img className="homeButton" src={require('./../images/home.png')}></img> </Link>
       </div>
       ];
     }
 }
 
-class TopBar extends Component{ 
-    render() { 
-      return ( 
-      <div className="topnav">
-        <a href="#Settings">Settings</a>
-        <a className="active">Username</a>
-      </div>
-      );
-    }
-}
+// class TopBar extends Component{ 
+//     render() { 
+//       return ( 
+//       <div className="topnav">
+//         <a href="#Settings">Settings</a>
+//         <a className="active">Username</a>
+//       </div>
+//       );
+//     }
+// }
 
 
 export default SideBar;

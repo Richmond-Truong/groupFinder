@@ -9,8 +9,8 @@ class Main extends Component{
       return (
         <main> 
             <Switch> 
-                <Route exact path='/main' component={Projects}/>
-                <Route path='/main/post' component={Posts}/>
+                <Route exact path='/' component={Projects}/>
+                <Route path='/post' component={Posts}/>
             </Switch> 
         </main>
       )

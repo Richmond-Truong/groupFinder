@@ -6,8 +6,6 @@ import './styles/postStyle.css';
 import './styles/loginStyle.css'
 import UI from './scripts/UI';
 import Main from './scripts/main';
-import TopBar from './topBar';
-import LoginPage from './scripts/login';
 
 class MainPage extends Component{
   render() { 
@@ -24,8 +22,7 @@ class App extends Component{
   render() { 
     return (
       <Switch> 
-        <Route exact path='/' component={LoginPage}/>
-        <Route path='/main' component={MainPage}/>
+        <Route path='/' component={MainPage}/>
       </Switch> 
     )
   }
