@@ -1,0 +1,249 @@
+/*Styles for Login window Modals*/
+
+.login-modal {
+    position: fixed;
+    top:10%;
+    left:25%;
+    width:50%;
+    height: 80%;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: white;
+    outline: none;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0)
+}
+
+.login-modal input.usernameField{
+    position:absolute;
+    top: 20%;
+    left: 20%;
+    width: 50%;
+    font-family: "Verdana";
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+
+.login-modal input.usernameField:focus{
+    border: 2px solid lightskyblue;
+}
+
+.login-modal  input.passwordField{
+    position:absolute;
+    top:30%;
+    left: 20%;
+    width: 50%;
+    font-family: "Verdana";
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+
+
+.login-modal input.passwordField:focus{
+    border: 2px solid lightskyblue;
+}
+
+.login-modal input.rememberMe {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    cursor: pointer;
+}
+
+.login-modal h2 {
+    font-size: 12px;
+    font-family: "Verdana";
+    position: absolute;
+    margin-left: 25%;
+    top: 38.5%;
+}
+
+.login-modal h1 {
+    position: absolute;
+    margin-left: 25%;
+    top: -10%;
+    left: 0%;
+
+}
+
+.login-modal input.attemptLogin{
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    padding: 10px 35px;
+    font-size: 20px;
+    font-family: "Verdana";
+    background-color: rgba(0,183,234,1);
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.login-modal input.attemptLogin:hover {
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    padding: 10px 35px;
+    font-size: 20px;
+    font-family: "Verdana";
+    color: white;
+    background-color: rgba(0,183,234,1);
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.open-modal-btn {
+    position: absolute;
+    left:50%;
+    background-color: aqua;
+    font-size: 20px;
+}
+
+.login-modal h1 {
+    font-family: "Verdana";
+    margin-left: 35%;
+    margin-top:12%;
+}
+
+
+.login-modal a {
+    position:absolute;
+    top:55%;
+    left:20%;
+}
+
+.login-modal .close-modal-btn {
+    position: absolute;
+    top: 2.5%;
+    left: 92%;
+    font-size: 20px;
+    background-color: transparent;
+    border: transparent;
+}
+
+/*
+    Styles for creating new post window
+*/
+
+.create-new-post-btn {
+    position:fixed;
+    top:85%;
+    right:5%;
+    font-size: 30px;
+    display:block;
+    height:65px;
+    width:65px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: lightyellow;
+    outline:none;
+}
+
+.create-new-post-btn:focus {
+    position: fixed;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    margin-right: 5px;
+    background-color: lightgreen;
+}
+
+.new-post-modal {
+    position: fixed;
+    top:10%;
+    left:10%;
+    width:80%;
+    height: 85%;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+    outline: none;
+}
+
+.new-post-modal h1{
+    position: relative;
+    top: 5%;
+    font-size: 30px;
+    font-family: "Verdana";
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+}
+
+.new-post-modal input.postTitle{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 30%;
+    font-size: 20px;
+    font-family: "Verdana";
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.new-post-modal input.postTitle:focus{
+    width: 90%;
+    border: 2px solid lightskyblue;
+}
+
+.new-post-modal textarea.postDescription{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    width: 90%;
+    height: 40%;
+    font-size: 20px;
+    font-family: "Verdana";
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.new-post-modal textarea.postDescription:focus{
+    border: 2px solid lightskyblue;
+}
+
+.new-post-modal input.submitPost{
+    position: relative;
+    top: 70%;
+    left: 70%;
+    padding: 10px 35px;
+    font-size: 20px;
+    font-family: "Verdana";
+    background-color: rgba(0,183,234,1);
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.new-post-modal button.cancel-post-btn{
+    position: relative;
+    top: 70%;
+    left: 70%;
+    padding: 10px 35px;
+    font-size: 20px;
+    font-family: "Verdana";
+    background-color: rgba(0,183,234,1);
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}

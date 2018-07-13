@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import './styles/barStyle.css'
-import './styles/postStyle.css'
-import SideBar from './scripts/sideBars';
-import Page from './scripts/posts';
+import './styles/barStyle.css';
+import './styles/postStyle.css';
+import './styles/modalStyle.css';
+import UI from './scripts/UI';
+import Main from './scripts/main';
 
-
-class HomePage extends Component{
+class MainPage extends Component{
   render() { 
-    return [
-      <SideBar key='1'/>, 
-      <Page key='2' />
-    ]
+    return (
+      <div>
+        <UI/>
+        <Main/>
+      </div>
+    )
+  }
+}
+
+class App extends Component{
+  render() { 
+    return (
+      <Switch> 
+        <Route path='/' component={MainPage}/>
+      </Switch> 
+    )
   }
 }
 
 
 
-export default HomePage; 
+
+
+export default App; 

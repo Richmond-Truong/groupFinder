@@ -5,6 +5,21 @@ html, body{
     width: 100%;
     overflow: hidden;
 }
+.comment { 
+    position: relative;
+    padding: 9px 15px;
+    border: 4px solid #0a3c59;
+    margin-bottom: 10px;
+    background: white;
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+.comment .user{
+    background: 
+        linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    font-family: "Verdana";
+}
 
 .page {
     z-index: 0;
@@ -19,22 +34,23 @@ html, body{
 }
 
 .pic {
-    position: relative;
-    left: 83%;
+    position: absolute;
+    right:15px;
+    top:5px;
     bottom:95%;
-    max-width: 100px;
-    max-height: 100px;
+    width: 100px;
+    height: 100px;
     border: 4px solid black;
     border-radius: 9px;
 }
 
 .post {
-    left:30%;
+    left:20%;
     top:50px;
     position: relative;
     padding: 9px 15px;
-    max-width: 600px; 
-    height:100px;
+    max-width: 800px; 
+    min-height:100px;
     border: 4px solid #0a3c59;
     background: linear-gradient(to bottom, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); 
     border-radius: 10px;
@@ -42,13 +58,13 @@ html, body{
     margin-bottom: 10px;
 }
 .post .Title{
-    max-width:80%; 
+    max-width:85%; 
     background: 
         linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
     font-family: "Verdana";
 }
 .post .Text{
     background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%);
-    max-width:80%; 
+    max-width:85%; 
     min-height:50px;
 }
