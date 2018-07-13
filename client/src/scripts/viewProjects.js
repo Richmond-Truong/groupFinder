@@ -19,7 +19,7 @@ class Page extends Component{
 
 
     state = {
-        data: [this.createPost("Sample User", "Title", "Some sample text")]
+        data: []
     }
 
     createPost(user, title, text){
@@ -41,7 +41,7 @@ class Page extends Component{
                 }
                 this.setState({data: this.posts_list})
         })
-            .catch(err => console.error(this.props.url, err.toString()))
+            .catch(err =>  this.setState({data: this.createPost("Sample User", this.props.url, err.toString())}))
     }
 
     render() { 
