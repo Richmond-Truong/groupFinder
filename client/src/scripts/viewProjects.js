@@ -2,7 +2,7 @@ import React, { Component }  from 'react';
 import Post from './posts';
 import { Link } from 'react-router-dom'
 
-class Page extends Component{
+class ProjectsPage extends Component{
     /*
     A container for all the posting for a project. Contains functions 
     for adding a post and to retrieve data from the datbase. 
@@ -54,4 +54,4 @@ class Page extends Component{
     }
 }
 
-export default Page;
+export default ProjectsPage;
