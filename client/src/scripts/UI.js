@@ -1,7 +1,6 @@
 import React, { Component }  from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
-import Page from './viewProjects';
 
 class SideBar extends Component{
 
@@ -96,7 +95,7 @@ class TopBar extends Component{
             <input className='postTitle' placeholder="Title.." type="text" />
           </label>
           <label>
-            <textarea className='postDescription' placeholder="Enter your description.." rows="10" cols="50"/>
+            <textarea className='postDescription' placeholder="Enter your description.." rows="10" cols="30"/>
           </label>
         </form>
         <input className='submitPost' type="submit" value="Post"/>
