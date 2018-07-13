@@ -61,8 +61,8 @@ class TopBar extends Component{
                     isOpen={this.state.modalOn}
                     onRequestClose={this.closeModal}
           >
-
-                      <button className="close-modal-btn" onClick = {this.closeModal}> &#9747; </button>
+                    <button className="close-modal-btn" onClick = {this.closeModal}> &#9747; </button>
+                    <div className="loginMenu">
                       <h1> Sign in </h1>
                       <form onSubmit={this.handleSubmit}>
                           <label>
@@ -79,7 +79,7 @@ class TopBar extends Component{
                           <input class='attemptLogin' type="submit" value="Login"/>
                       </form>
                       <a href >New user? Click here to register</a>
-  
+                    </div>
         </Modal>
         ];
       }
