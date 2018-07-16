@@ -19,12 +19,16 @@ class Post extends Component{
         return (
             
             <div className="post" style={this.state}> 
-                <div className="Title"> {this.postTitle}</div>
-                <div className="Text"> {this.postText}</div> 
-                <div className="Title"> {this.userName}</div>
-                <div className="pic">
-                    <img alt="" src={require('./../images/sample_user.jpg')} width="100" height="100"/>
+                <div className="Stats"> 
+                    <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100"/>
+                    <div>Views: 15</div> 
+                    <div>Likes: 10 </div>
                 </div>
+                <div style={{flexGrow: 1, position: 'relative', left: '30px'}}> 
+                    <div className="Title"> {this.postTitle}</div>
+                    <div className="Text"> {this.postText}</div> 
+                    <div className="Title"> {this.userName}</div>
+                </div> 
             </div>
             )
     }
