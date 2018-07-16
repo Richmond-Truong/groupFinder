@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Post from './posts.js';
 
-
+var commentCount = 0; 
 class Comment extends Component{
   /*
   A class to represent the comments made to a posting. 
@@ -16,12 +16,13 @@ class Comment extends Component{
       this.pos = {left: position};
       this.postText = text;
       this.children = child_list;
+      commentCount++; 
   }
 
 
   render() {
       return (
-          <div className="comment" style={this.pos}> 
+          <div className="comment" key={commentCount} style={this.pos}> 
               <div className="user"> {this.userName}</div>
               <div className="Text"> {this.postText}</div>
               {this.children} 
