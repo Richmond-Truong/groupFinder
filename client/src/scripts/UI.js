@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 
+
 class SideBar extends Component{
 
     constructor(prop) {
@@ -43,8 +44,14 @@ class SideBar extends Component{
 
 class TopBar extends Component{
   state = {
-    modalOn : null
+    modalOn : null,
+    title:'', 
+    description: ''
   }
+
+  /* Generanic change method for forms */ 
+  onChange = e => this.setState({ [e.target.name]: e.target.value })
+
 
   openModal = (name) =>{
     this.setState({modalOn : name});
@@ -57,7 +64,21 @@ class TopBar extends Component{
   isModalOpen = (name) =>{
     console.log(`xxx modal = ${this.state.modalOn}`)
     return (name === this.state.modalOn);
-  } 
+  }
+  
+  /*Used to handle PUT reequest for new Posting */ 
+  createNewPost = () => { 
+    console.log("CREATING NEW POST: " + this.state.title + " , " + this.state.description);
+
+    var newdata = {'tags': 'newUSER', 'title': this.state.title, 'description': this.state.description};
+    this.closeModal();
+    return fetch('https://groupfinder1.herokuapp.com/post', {
+      method: 'POST', 
+      body: newdata
+    }).then(response => response.json()).catch(error => error);
+    
+  }
+
   render() { 
     const loginModal = (
       <Modal  className="login-modal"
@@ -68,14 +89,14 @@ class TopBar extends Component{
         <button className="close-modal-btn" onClick={this.closeModal}> &#9747; </button>
         <h1> Sign in </h1>
         <form onSubmit={this.handleSubmit}>
-        <label>
-            <input className='usernameField' placeholder="Username" type="text" onChange={this.handleUsernameChange}/> 
-        </label>
-        <label>
-            <input className='passwordField' placeholder="Password" type="password" onChange={this.handlePasswordChange}/>
-        </label>
-        <input className='rememberMe' type="checkbox"/> <h2>Remember me</h2>
-        <input className='attemptLogin' type="submit" value="Login"/>
+          <label>
+              <input className='usernameField' placeholder="Username" type="text" onChange={this.handleUsernameChange}/> 
+          </label>
+          <label>
+              <input className='passwordField' placeholder="Password" type="password" onChange={this.handlePasswordChange}/>
+          </label>
+          <input className='rememberMe' type="checkbox"/> <h2>Remember me</h2>
+          <input className='attemptLogin' type="submit" value="Login"/>
         </form>
         <a href >New user? Click here to register</a>
       </Modal>
@@ -92,13 +113,13 @@ class TopBar extends Component{
         <h1> Create a new post </h1>
         <form>
           <label>
-            <input className='postTitle' placeholder="Title.." type="text" />
+            <input className='postTitle' name="title" placeholder="Title.." type="text" onChange={this.onChange}/>
           </label>
           <label>
-            <textarea className='postDescription' placeholder="Enter your description.." rows="10" cols="0"/>
+            <textarea className='postDescription' name="description" onChange={this.onChange} placeholder="Enter your description.." rows="10" cols="0" onChange={this.onChange}/>
           </label>
         </form>
-        <input className='submitPost' type="submit" value="Post"/>
+        <input className='submitPost' type="submit" value="Post" onClick={this.createNewPost}/>
         <button className='cancel-post-btn' onClick={this.closeModal}> Cancel </button>
       </Modal>
     </div> 
