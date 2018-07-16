@@ -139,7 +139,7 @@ class TopBar extends Component{
             <textarea className='postDescription' name="description" onChange={this.onChange} placeholder="Enter your description.." rows="10" cols="0" />
           </label>
         </form>
-        <div style={{flexGrow: 1, position: 'relative', left: '30px', top:'70%' , left:'70%',     display:"block"}}> 
+        <div style={{flexGrow: 1, position: 'relative', top:'70%' , left:'70%',     display:"block"}}> 
           <input className='submitPost' type="submit" value="Post" onClick={this.createNewPost}/>
           <button className='cancel-post-btn' onClick={this.closeModal}> Cancel </button>
         </div> 
