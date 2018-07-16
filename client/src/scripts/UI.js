@@ -46,7 +46,9 @@ class TopBar extends Component{
   state = {
     modalOn : null,
     title:'', 
-    description: ''
+    description: '', 
+    username: '',
+    password: ''
   }
 
   /* Generanic change method for forms */ 
@@ -66,17 +68,29 @@ class TopBar extends Component{
     return (name === this.state.modalOn);
   }
   
-  /*Used to handle PUT reequest for new Posting */ 
+  /*Used to handle POST reequest for new Posting */ 
   createNewPost = () => { 
     console.log("CREATING NEW POST: " + this.state.title + " , " + this.state.description);
 
-    var newdata = {'tags': 'newUSER', 'title': this.state.title, 'description': this.state.description};
+    const formData = new FormData();
+    formData.append('tags', 'newUser');
+    formData.append('last_name', this.state.title);
+    formData.append('email', this.state.description);
+
+    var newdata = '{"tags": "newUSER", "title": "' + this.state.title.toString()+ '", "description": "' + this.state.description.toString() + '"}';
+    console.log(newdata);
     this.closeModal();
     return fetch('https://groupfinder1.herokuapp.com/post', {
       method: 'POST', 
-      body: newdata
-    }).then(response => response.json()).catch(error => error);
+      body: JSON.parse(newdata)
+    }).then(response => response.json()).catch(function(error) {
+      console.log('There has been a problem with your fetch operation: ', error.message);
+    });
     
+  }
+
+  userLogin = () => {
+    console.log("CREATING NEW POST: " + this.state.password+ " , " + this.state.username);
   }
 
   render() { 
@@ -90,13 +104,13 @@ class TopBar extends Component{
         <h1> Sign in </h1>
         <form onSubmit={this.handleSubmit}>
           <label>
-              <input className='usernameField' placeholder="Username" type="text" onChange={this.handleUsernameChange}/> 
+              <input className='usernameField' placeholder="Username" name="username" type="text" onChange={this.onChange}/> 
           </label>
           <label>
-              <input className='passwordField' placeholder="Password" type="password" onChange={this.handlePasswordChange}/>
+              <input className='passwordField' placeholder="Password"  name="password" type="password" onChange={this.onChange}/>
           </label>
           <input className='rememberMe' type="checkbox"/> <h2>Remember me</h2>
-          <input className='attemptLogin' type="submit" value="Login"/>
+          <input className='attemptLogin' type="submit" value="Login" onClick={this.userLogin}/>
         </form>
         <a href >New user? Click here to register</a>
       </Modal>
