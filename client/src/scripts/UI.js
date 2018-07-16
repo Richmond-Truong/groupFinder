@@ -64,7 +64,7 @@ class TopBar extends Component{
   closeModal = () =>{
     this.setState({modalOn: null});
   }
-  
+
   componentWillMount() {
     Modal.setAppElement('body');
   }
@@ -118,7 +118,7 @@ class TopBar extends Component{
           <input className='rememberMe' type="checkbox"/> <h2>Remember me</h2>
           <input className='attemptLogin' type="submit" value="Login" onClick={this.userLogin}/>
         </form>
-        <a href >New user? Click here to register</a>
+        <a>New user? Click here to register</a>
       </Modal>
     );
 
