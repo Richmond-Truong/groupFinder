@@ -139,8 +139,10 @@ class TopBar extends Component{
             <textarea className='postDescription' name="description" onChange={this.onChange} placeholder="Enter your description.." rows="10" cols="0" />
           </label>
         </form>
-        <input className='submitPost' type="submit" value="Post" onClick={this.createNewPost}/>
-        <button className='cancel-post-btn' onClick={this.closeModal}> Cancel </button>
+        <div style={{flexGrow: 1, position: 'relative', left: '30px', top:'70%' , left:'70%',     display:"block"}}> 
+          <input className='submitPost' type="submit" value="Post" onClick={this.createNewPost}/>
+          <button className='cancel-post-btn' onClick={this.closeModal}> Cancel </button>
+        </div> 
       </Modal>
     </div> 
   );    
@@ -150,7 +152,6 @@ class TopBar extends Component{
       {newPostModal}
       {loginModal}
       <a href="#Settings">Settings</a>
-      <a className="active">Username</a>
       <a onClick={() => this.openModal("createPost")}> Make Post</a>
       <a onClick={() => this.openModal("Login")}> Login</a>
     </div>

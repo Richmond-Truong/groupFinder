@@ -222,9 +222,6 @@
 }
 
 .new-post-modal input.submitPost{
-    position: relative;
-    top: 70%;
-    left: 70%;
     padding: 10px 35px;
     font-size: 20px;
     font-family: "Verdana";
@@ -236,9 +233,6 @@
 }
 
 .new-post-modal button.cancel-post-btn{
-    position: relative;
-    top: 70%;
-    left: 70%;
     padding: 10px 35px;
     font-size: 20px;
     font-family: "Verdana";
