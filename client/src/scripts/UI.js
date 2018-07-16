@@ -19,13 +19,15 @@ class SideBar extends Component{
       this.setState({width: '0%', minWidth:'0px'})
       
     }
+
+    
     
     render() { 
 
       return [ 
       
       <div id="mySidenav" className="sidenav" style={this.state}  key="1">
-        <button href="javascript:void(0)" className="closebtn" onClick={this.close_side_bar}> 
+        <button className="closebtn" onClick={this.close_side_bar}> 
           &times;
         </button>
         <img className="logo" alt="" src={require('./../images/logo.png')}/> 
@@ -35,8 +37,8 @@ class SideBar extends Component{
       </div>,
       <TopBar key='2'/>,
       <div key='3' style={{width:'0px', height:'0px'}}>
-        <div className="sideNavButton" href="javascript:void(0)" key='3' onClick={this.open_side_bar}>&#9776;</div>
-        <Link to='/' > <img className="homeButton" src={require('./../images/home.png')}></img> </Link>
+        <div className="sideNavButton" key='3' onClick={this.open_side_bar}>&#9776;</div>
+        <Link to='/' > <img alt='' className="homeButton" src={require('./../images/home.png')}></img> </Link>
       </div>
       ];
     }
@@ -62,6 +64,10 @@ class TopBar extends Component{
   closeModal = () =>{
     this.setState({modalOn: null});
   }
+  
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
 
   isModalOpen = (name) =>{
     console.log(`xxx modal = ${this.state.modalOn}`)
@@ -77,12 +83,12 @@ class TopBar extends Component{
     formData.append('last_name', this.state.title);
     formData.append('email', this.state.description);
 
-    var newdata = '{"tags": "newUSER", "title": "' + this.state.title.toString()+ '", "description": "' + this.state.description.toString() + '"}';
-    console.log(newdata);
+    var newdata = '{"_id": "sdfsdfsdfsd", "date": 13424324523, "tags": "newUSER", "title": "' + this.state.title.toString()+ '", "description": "' + this.state.description.toString() + '"}';
+    console.log(JSON.parse(newdata));
     this.closeModal();
     return fetch('https://groupfinder1.herokuapp.com/post', {
       method: 'POST', 
-      body: JSON.parse(newdata)
+      body:JSON.stringify(newdata)
     }).then(response => response.json()).catch(function(error) {
       console.log('There has been a problem with your fetch operation: ', error.message);
     });
@@ -130,7 +136,7 @@ class TopBar extends Component{
             <input className='postTitle' name="title" placeholder="Title.." type="text" onChange={this.onChange}/>
           </label>
           <label>
-            <textarea className='postDescription' name="description" onChange={this.onChange} placeholder="Enter your description.." rows="10" cols="0" onChange={this.onChange}/>
+            <textarea className='postDescription' name="description" onChange={this.onChange} placeholder="Enter your description.." rows="10" cols="0" />
           </label>
         </form>
         <input className='submitPost' type="submit" value="Post" onClick={this.createNewPost}/>
