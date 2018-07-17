@@ -151,7 +151,7 @@ class TopBar extends Component{
     <div className="topnav">
       {newPostModal}
       {loginModal}
-      <a href="#Settings">Settings</a>
+      <Link to='/'> Home </Link>
       <a onClick={() => this.openModal("createPost")}> Make Post</a>
       <a onClick={() => this.openModal("Login")}> Login</a>
     </div>
@@ -160,4 +160,4 @@ class TopBar extends Component{
 }
 
 
-export default SideBar;
+export default TopBar;
