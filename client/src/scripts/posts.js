@@ -25,7 +25,7 @@ class Post extends Component {
                     <div>Likes: 10 </div>
                 </div>
                 <div style={{ flexGrow: 1, position: 'relative', left: '30px' }}>
-                    <div className="Title"> {this.postTitle}</div>
+                    <div className="Title"> <h2> {this.postTitle} </h2></div>
                     <div className="Text"> {this.postText}</div>
                 </div>
             </div>
