@@ -1,7 +1,7 @@
-import React, { Component }  from 'react';
+import React, { Component } from 'react';
 
 
-class Post extends Component{
+class Post extends Component {
     /*
     A class tp represent a psoting for a project. 
     Includes a user, title and details about the 
@@ -10,27 +10,26 @@ class Post extends Component{
 
     constructor(user, title, text) {
         super();
-        this.userName = user; 
-        this.postTitle = title; 
+        this.userName = user;
+        this.postTitle = title;
         this.postText = text;
     }
 
     render() {
         return (
-            
-            <div className="post" style={this.state}> 
-                <div className="Stats"> 
-                    <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100"/>
-                    <div>Views: 15</div> 
+
+            <div className="post" style={this.state}>
+                <div className="Stats">
+                    <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100" />
+                    <div>Views: 15</div>
                     <div>Likes: 10 </div>
                 </div>
-                <div style={{flexGrow: 1, position: 'relative', left: '30px'}}> 
+                <div style={{ flexGrow: 1, position: 'relative', left: '30px' }}>
                     <div className="Title"> {this.postTitle}</div>
-                    <div className="Text"> {this.postText}</div> 
-                    <div className="Title"> {this.userName}</div>
-                </div> 
+                    <div className="Text"> {this.postText}</div>
+                </div>
             </div>
-            )
+        )
     }
 
 }
