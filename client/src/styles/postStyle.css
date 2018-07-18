@@ -8,16 +8,14 @@ html, body{
 .comment { 
     position: relative;
     padding: 9px 15px;
-    border: 4px solid #0a3c59;
+    border: 2px solid #0a3c59;
     margin-bottom: 10px;
     background: white;
     max-width: 80%;
-    border-radius: 10px;
 }
 
 .comment .user{
-    background: 
-        linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    border-bottom: solid 2px black;
     font-family: "Verdana";
 }
 
@@ -25,12 +23,11 @@ html, body{
     z-index: 0;
     position: absolute;
     width: 100%;
-    height: 95%;
+    height: 100%;
     align-content: center;
-    display:inline-block;
     overflow: scroll;
     background-image: url('../images/background.jpg');
-    margin-top: 50px;
+    margin-top: -15px;
 }
 
 
@@ -72,7 +69,7 @@ html, body{
     left: 200px;
 }
 .post .Text{
-    background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%);
+    background: white;
     max-width:95%; 
     min-height:130px;
 }
