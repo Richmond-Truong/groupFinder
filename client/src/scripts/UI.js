@@ -153,8 +153,8 @@ class TopBar extends Component {
     );
 
     return (
-      <div className="ui inverted segment">
-        <div className="ui inverted secondary pointing menu">
+  
+      <div class="ui inverted menu">
           {newPostModal}
           {loginModal}
           <a className="item" onClick={() => this.openModal("createPost")}> Make Post</a>
@@ -163,7 +163,7 @@ class TopBar extends Component {
             Home
         </Link>
         </div>
-      </div>
+      
       // <div className="topnav">
       //   {newPostModal}
       //   {loginModal}

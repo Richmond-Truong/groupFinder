@@ -19,15 +19,20 @@ class Post extends Component {
         return (
 
             <div className="post" style={this.state}>
+                
                 <div className="Stats">
                     <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100" />
                     <div>Views: 15</div>
                     <div>Likes: 10 </div>
                 </div>
                 <div style={{ flexGrow: 1, position: 'relative', left: '30px' }}>
+                    <div style={{zIndex:'2', position:'relative', left:'80%'}}> Job Title</div>
+                    <div style={{zIndex:'2', position:'relative', left: '80%'}}> Location </div>
                     <div className="Title"> <h2> {this.postTitle} </h2></div>
                     <div className="Text"> {this.postText}</div>
+                    
                 </div>
+               
             </div>
         )
     }
