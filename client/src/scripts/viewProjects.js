@@ -24,7 +24,7 @@ class ProjectsPage extends Component{
     /*
         Save the post to local storage to be used in multipul sessions
     */
-        localStorage.setItem(key, JSON.stringify(post));
+        localStorage.setItem(key, post);
     }
 
     createPost(user, title, text){
@@ -35,7 +35,7 @@ class ProjectsPage extends Component{
         var newPost = new Post(user, title, text); 
         var saveData = {"user": user, "title": title, "text":text};
         return (
-        <Link key={this.KEY.toString()} onClick={() => this.storePost("post", saveData)} to={{pathname:`/post/${user}`}} style={{ textDecoration: 'none', color:'black'}}> 
+        <Link key={this.KEY.toString()} onClick={() => this.storePost("post", newPost.getJSON())} to={{pathname:`/post/${user}`}} style={{ textDecoration: 'none', color:'black'}}> 
             {newPost.render()} 
         </Link>
         );
