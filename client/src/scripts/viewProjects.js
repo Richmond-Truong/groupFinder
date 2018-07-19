@@ -32,11 +32,10 @@ class ProjectsPage extends Component{
         Will create a post for rendering given the required fields. 
     */
         this.KEY = this.KEY + 1;
-        var state_vars = {name: user,  title: title, text:text};
         var newPost = new Post(user, title, text); 
         var saveData = {"user": user, "title": title, "text":text};
         return (
-        <Link key={this.KEY.toString()} onClick={() => this.storePost("post", saveData)} to={{pathname:`/post/${user}`, state: state_vars}} style={{ textDecoration: 'none', color:'black'}}> 
+        <Link key={this.KEY.toString()} onClick={() => this.storePost("post", saveData)} to={{pathname:`/post/${user}`}} style={{ textDecoration: 'none', color:'black'}}> 
             {newPost.render()} 
         </Link>
         );
