@@ -42,12 +42,14 @@ class PostPage extends Component{
     constructor(prop) {
       super(prop);
       this.comment_list = [];
+      var temp = JSON.parse(localStorage.getItem("post"));
+      this.savedpost = new Post(temp["user"], temp["title"], temp["text"])
       this.addComment = this.addComment.bind(this)
     }
 
     
     componentDidMount() {
-        console.log(this.props.location.state);
+        //console.log(this.props.location.state);
         this.setState({data: this.props.location.state})
     }
 
@@ -60,7 +62,7 @@ class PostPage extends Component{
         this.addComment("user", '100px', 'testeregrt', []);
         return (
             <div className="page">
-              {new Post(this.state['data']['name'], this.state['data']['title'], this.state['data']['text']).render()}
+              {this.savedpost.render()}
               <div style={ {height:'70px'}}/>
               {this.comment_list}
             </div> 

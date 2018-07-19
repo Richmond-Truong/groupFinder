@@ -12,11 +12,19 @@ class ProjectsPage extends Component{
         this.posts_list = [];
         this.KEY = 0;
         this.createPost = this.createPost.bind(this);
+        this.storePost = this.storePost.bind(this);
         this.loadData();
     }
 
     state = {
         data: []
+    }
+
+    storePost(key, post){
+    /*
+        Save the post to local storage to be used in multipul sessions
+    */
+        localStorage.setItem(key, JSON.stringify(post));
     }
 
     createPost(user, title, text){
@@ -25,7 +33,13 @@ class ProjectsPage extends Component{
     */
         this.KEY = this.KEY + 1;
         var state_vars = {name: user,  title: title, text:text};
-        return <Link key={this.KEY.toString()} to={{pathname:`/post/${user}`, state: state_vars}} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>;
+        var newPost = new Post(user, title, text); 
+        var saveData = {"user": user, "title": title, "text":text};
+        return (
+        <Link key={this.KEY.toString()} onClick={() => this.storePost("post", saveData)} to={{pathname:`/post/${user}`, state: state_vars}} style={{ textDecoration: 'none', color:'black'}}> 
+            {newPost.render()} 
+        </Link>
+        );
     }
 
     loadData() {
