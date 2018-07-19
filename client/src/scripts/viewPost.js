@@ -36,7 +36,6 @@ class PostPage extends Component{
 
     state = {
         modalOn : null,
-        data: {'name': '', 'title': '', 'text':''}
     }
 
     constructor(prop) {
