@@ -91,34 +91,6 @@
   
   
 /* Styling for the top bar */
-.topnav {
-    width: 100%;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    position: fixed;
-    overflow: hidden;
-    background: black;
-    display:inline-block;
-    padding-right:18px;
-}
-
-.topnav a {
-    float: right;
-    color: var(--main-higlight-color-alt);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 120%;
-    border-right: double white;
-}
-  
-.topnav a:hover {
-    background-color: var(--main-higlight-color-alt);
-    color: black;
-}
-
-.topnav a.active {
-    background-color: var(--main-highlight-color);
-    color: var(--main-higlight-color-alt);
+#topnav {
+    background-color: var(--dark);
 }

@@ -33,7 +33,6 @@ class ProjectsPage extends Component{
     */
         this.KEY = this.KEY + 1;
         var newPost = new Post(user, title, text); 
-        var saveData = {"user": user, "title": title, "text":text};
         return (
         <Link key={this.KEY.toString()} onClick={() => this.storePost("post", newPost.getJSON())} to={{pathname:`/post/${user}`}} style={{ textDecoration: 'none', color:'black'}}> 
             {newPost.render()} 

@@ -154,7 +154,7 @@ class TopBar extends Component {
 
     return (
   
-      <div className="ui inverted menu">
+      <div className="ui inverted menu" id="topnav">
           {newPostModal}
           {loginModal}
           <a className="item" onClick={() => this.openModal("createPost")}> Make Post</a>
