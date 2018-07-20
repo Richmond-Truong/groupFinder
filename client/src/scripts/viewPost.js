@@ -40,7 +40,7 @@ class Comment extends Component{
                         <div class="field">
                         <textarea></textarea>
                         </div>
-                        <div class="ui blue labeled submit icon button">
+                        <div class="ui blue labeled submit icon button" id="customButton">
                         <i class="icon edit"></i> Add Reply
                         </div>
                     </form>
@@ -80,13 +80,13 @@ class PostPage extends Component{
     }
 
     render() { 
-        this.addComment("user1", '100px', 'hello im user1', [new Comment("user2", "100px", "hello im user2", [new Comment("user3", "100px", "hello im user33333333333333333333333333333333333333333333333333333333333", []).render()]).render(), new Comment("user4", "100px", "hello im user4", []).render()]);
+        this.addComment("user1", '100px', 'hello im user1', []);
         this.addComment("user5", '100px', 'hello im user5', []);
         return (
             <div className="page">
-                <div style={{height:'70px'}}/>
-                <div className="ui huge raised padded text container segment">
-                    <div className="ui left rail">
+                <div className="ui huge raised padded text container segment" style={{marginTop:'70px'}}>
+                    {/* Div holding profile bio and info.  */}
+                    <div className="ui left rail" style={{width:'30%'}}>
                         <div className="ui card">
                             <div className="image">
                                 <img src={require('./../images/sample_user.jpg')}/>
@@ -107,6 +107,7 @@ class PostPage extends Component{
                             </div>
                         </div>
                     </div>
+                    {/* div holding the actual post with the comments */}
                     <div className="content">
                         <div className="header">
                             {this.savedpost.postTitle}
@@ -116,11 +117,12 @@ class PostPage extends Component{
                             {this.savedpost.postText}
                         </div>
                     </div>
-                    <div className="ui right rail">
-                        <div class="ui vertical rectangle test ad" data-text="Ad Unit 1"></div>
+                    {/* The div holding an Ad */}
+                    <div className="ui right rail" style={{width:'30%'}}>
+                        <div class="ui vertical rectangle test ad" data-text="Ad Unit 1" style={{width:'100%'}}></div>
                     </div>
                 </div>
-                <div className="ui raised very padded text container segment">
+                <div className="ui raised very padded text container segment" >
                     <h3 className="ui dividing header">Comments</h3>
                     {this.comment_list}
                     <form class="ui reply form">
