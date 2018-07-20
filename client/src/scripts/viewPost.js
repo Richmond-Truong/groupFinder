@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Post from './posts.js';
-
 var commentCount = 0; 
 class Comment extends Component{
   /*
@@ -22,12 +21,36 @@ class Comment extends Component{
 
   render() {
       return (
-          <div className="comment" key={commentCount} style={this.pos}> 
-              <div className="user"> {this.userName}</div>
-              <div className="Text"> {this.postText}</div>
-              {this.children} 
-          </div>
-          )
+        <div className="ui threaded comments" key={commentCount} style={this.pos}>
+            <div className="comment">
+                <a class="avatar">
+                    <img src={require('./../images/sample_user.jpg')}/>
+                </a>
+                <div className="content">
+                    <a className="author">
+                        {this.userName}
+                    </a>
+                    <div className="text">
+                        {this.postText}
+                    </div>
+                    <div className="actions">
+                        <a className="reply">Reply</a>
+                    </div>
+                    <form class="ui reply form">
+                        <div class="field">
+                        <textarea></textarea>
+                        </div>
+                        <div class="ui blue labeled submit icon button">
+                        <i class="icon edit"></i> Add Reply
+                        </div>
+                    </form>
+                </div>
+                <div className="comment">
+                    {this.children}
+                </div>
+            </div>
+        </div>
+        )
   }
 
 }
@@ -56,17 +79,61 @@ class PostPage extends Component{
     }
 
     render() { 
-        this.addComment("user", '100px', 'testeregrt', [new Comment("SDDFG", "100px", "SDFGD", [new Comment("SDDFG", "100px", "SDFGD", []).render()]).render(), new Comment("SDDFG", "100px", "SDFGD", []).render()]);
-        this.addComment("user", '100px', 'testeregrt', []);
+        this.addComment("user1", '100px', 'hello im user1', [new Comment("user2", "100px", "hello im user2", [new Comment("user3", "100px", "hello im user33333333333333333333333333333333333333333333333333333333333", []).render()]).render(), new Comment("user4", "100px", "hello im user4", []).render()]);
+        this.addComment("user5", '100px', 'hello im user5', []);
         return (
             <div className="page">
-              {new Post(this.state['data']['name'], this.state['data']['title'], this.state['data']['text']).render()}
-              <div style={ {height:'70px'}}/>
-              {this.comment_list}
+                <div style={{height:'70px'}}/>
+                <div className="ui huge raised padded text container segment">
+                    <div className="ui left rail">
+                        <div className="ui card">
+                            <div className="image">
+                                <img src={require('./../images/sample_user.jpg')}/>
+                            </div>
+                            <div className="content">
+                                <a class="header">{this.state['data']['name']}</a>
+                                <div class="description">
+                                   this is {this.state['data']['name']}'s bio
+                                </div>
+                            </div>
+                            <div className="extra content">
+                                For money?
+                            </div>
+                            <div className="extra content">
+                                <a class="ui tag label">tag1</a>
+                                <a class="ui red tag label">tag2</a>
+                                <a class="ui teal tag label">tag3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="content">
+                        <div className="header">
+                            {this.state['data']['title']}
+                        </div>
+                        <div className='ui divider'></div>
+                        <div className="description">
+                            {this.state['data']['text']}
+                        </div>
+                    </div>
+                    <div className="ui right rail">
+                        <div class="ui vertical rectangle test ad" data-text="Ad Unit 1"></div>
+                    </div>
+                </div>
+                <div className="ui raised very padded text container segment">
+                    <h3 className="ui dividing header">Comments</h3>
+                    {this.comment_list}
+                    <form class="ui reply form">
+                        <div class="field">
+                        <textarea></textarea>
+                        </div>
+                        <div class="ui primary submit labeled icon button">
+                        <i class="icon edit"></i> Add Comment
+                        </div>
+                    </form>
+                </div>
             </div> 
         )
     }
-
 }
 
 
