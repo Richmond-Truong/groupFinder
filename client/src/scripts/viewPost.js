@@ -59,18 +59,19 @@ class PostPage extends Component{
 
     state = {
         modalOn : null,
-        data: {'name': '', 'title': '', 'text':''}
     }
 
     constructor(prop) {
       super(prop);
       this.comment_list = [];
+      var temp = JSON.parse(localStorage.getItem("post"));
+      this.savedpost = new Post(temp["user"], temp["title"], temp["text"])
       this.addComment = this.addComment.bind(this)
     }
 
     
     componentDidMount() {
-        console.log(this.props.location.state);
+        //console.log(this.props.location.state);
         this.setState({data: this.props.location.state})
     }
 
@@ -91,9 +92,9 @@ class PostPage extends Component{
                                 <img src={require('./../images/sample_user.jpg')}/>
                             </div>
                             <div className="content">
-                                <a class="header">{this.state['data']['name']}</a>
+                                <a class="header">{this.savedpost.userName}</a>
                                 <div class="description">
-                                   this is {this.state['data']['name']}'s bio
+                                   this is {this.savedpost.userName}'s bio
                                 </div>
                             </div>
                             <div className="extra content">
@@ -108,11 +109,11 @@ class PostPage extends Component{
                     </div>
                     <div className="content">
                         <div className="header">
-                            {this.state['data']['title']}
+                            {this.savedpost.postTitle}
                         </div>
                         <div className='ui divider'></div>
                         <div className="description">
-                            {this.state['data']['text']}
+                            {this.savedpost.postText}
                         </div>
                     </div>
                     <div className="ui right rail">
