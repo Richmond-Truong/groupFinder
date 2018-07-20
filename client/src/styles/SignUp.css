@@ -1,0 +1,113 @@
+
+#clicky{
+    background-color:white;
+    color:rgb(74, 155, 248);
+    width:280px;
+    position:absolute;
+    top:22%;
+    left:15%;
+    border: rgb(74, 155, 248) solid 2px;
+}
+
+#name{
+    font-size:50px;
+    position:absolute;
+    top:2%;
+    left:14%;
+    font-family: 'Lato', sans-serif;
+}
+
+#account{
+    position:absolute;
+    top:35%;
+    left:17%;
+}
+
+#smallbox{
+    width:400px;
+    height:70px;
+    background-color:white;
+    position:absolute;
+    top:65%;
+    left:40%;
+}
+
+#or{
+    position:absolute;
+    top:25.5%;
+    left:15%;
+}
+
+#terms{
+    position:absolute;
+    top:84.5%;
+}
+
+#clicky2{
+    background-color:white;
+    color:rgb(74, 155, 248);
+    width:280px;
+    position:absolute;
+    top:76%;
+    left:15%;
+    border:1px solid rgb(74, 155, 248); 
+}
+
+#clicky:active{
+    color:white;
+    background-color:rgb(74, 155, 248);
+}
+
+#clicky2:active{
+    color:white;
+    background-color:rgb(74, 155, 248);
+}
+
+#form6{
+    top:35%;
+    font-family: 'Open Sans', sans-serif;
+    border:1px solid black;
+    border-radius: 5px;
+    width:280px;
+    left:12%;
+}
+
+#form7{
+    position:absolute;
+    top:44%;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width:280px;
+    left:15%;
+}
+
+#form3{
+    position:absolute;
+    top:52%;
+    left:15%;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width:280px;
+}
+
+#form4{
+    position:absolute;
+    left:15%;
+    top:60%;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width:280px;
+}
+
+#form5{
+    position:absolute;
+    left:15%;
+    top:68%;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width:280px;
+}
