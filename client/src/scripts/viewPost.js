@@ -34,17 +34,6 @@ class Comment extends Component{
                     <div className="text">
                         {this.postText}
                     </div>
-                    <div className="actions">
-                        <a className="reply">Reply</a>
-                    </div>
-                    <form class="ui reply form">
-                        <div class="field">
-                        <textarea></textarea>
-                        </div>
-                        <div class="ui blue labeled submit icon button" id="customButton">
-                        <i class="icon edit"></i> Add Reply
-                        </div>
-                    </form>
                 </div>
                 <div className="comment">
                     {this.children}
