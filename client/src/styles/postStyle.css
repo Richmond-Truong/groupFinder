@@ -8,16 +8,14 @@ html, body{
 .comment { 
     position: relative;
     padding: 9px 15px;
-    border: 4px solid #0a3c59;
+    border: 2px solid #0a3c59;
     margin-bottom: 10px;
     background: white;
     max-width: 80%;
-    border-radius: 10px;
 }
 
 .comment .user{
-    background: 
-        linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    border-bottom: solid 2px black;
     font-family: "Verdana";
 }
 
@@ -27,43 +25,51 @@ html, body{
     width: 100%;
     height: 95%;
     align-content: center;
-    display:inline-block;
     overflow: scroll;
     background-image: url('../images/background.jpg');
-    margin-top: 50px;
+    margin-top: -15px;
 }
 
-.pic {
-    position: relative;
-    left: 83%;
-    bottom:95%;
-    max-width: 100px;
-    max-height: 100px;
-    border: 4px solid black;
-    border-radius: 9px;
-}
+
 
 .post {
-    left:30%;
+    left:20%;
     top:50px;
     position: relative;
-    padding: 9px 15px;
-    max-width: 600px; 
-    height:100px;
-    border: 4px solid #0a3c59;
-    background: linear-gradient(to bottom, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); 
-    border-radius: 10px;
+    max-width: 800px; 
+    min-height:100px;
+    border: 2px solid #0a3c59;
+    background: white;
     transition: 0.5s;
     margin-bottom: 10px;
+    display: flex;
+}
+
+.post .pic {
+    position: relative;
+    right:0px;
+    top:0px;
+    bottom:95%;
+    width: 100px;
+    height: 100px;
+}
+
+.post .Stats { 
+    height: 90%;
+    width: 100px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 9px;
 }
 .post .Title{
-    max-width:80%; 
-    background: 
-        linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    max-width:95%; 
+    background: white;
     font-family: "Verdana";
+    border-bottom: solid 4px black;
+    left: 200px;
 }
 .post .Text{
-    background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%);
-    max-width:80%; 
-    min-height:50px;
+    background: white;
+    max-width:95%; 
+    min-height:130px;
 }

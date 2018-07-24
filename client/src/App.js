@@ -1,22 +1,36 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import './styles/barStyle.css'
-import './styles/postStyle.css'
-import './styles/loginWindow.css'
+import './styles/barStyle.css';
+import './styles/postStyle.css';
+import './styles/modalStyle.css';
+import './semantic/dist/semantic.css'
 import UI from './scripts/UI';
-import ProjectPage from './scripts/viewProjects';
-import PostPage from './scripts/viewPost';
+import Main from './scripts/main';
 
-
-class HomePage extends Component{
+class MainPage extends Component{
   render() { 
-    return [
-      <UI key='1'/>, 
-      <PostPage key='2' />
-    ]
+    return (
+      <div>
+        <UI/>
+        <Main/>
+      </div>
+    )
+  }
+}
+
+class App extends Component{
+  render() { 
+    return (
+      <Switch> 
+        <Route path='/' component={MainPage}/>
+      </Switch> 
+    )
   }
 }
 
 
 
-export default HomePage; 
+
+
+export default App; 
