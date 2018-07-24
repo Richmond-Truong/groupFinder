@@ -15,7 +15,7 @@ class ProjectsPage extends Component {
         this.storePost = this.storePost.bind(this);
         this.loadData();
     }
-
+    
     state = {
         data: []
     }
