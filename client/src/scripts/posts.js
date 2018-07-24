@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-
 class Post extends Component {
-    /*
-    A class tp represent a psoting for a project. 
-    Includes a user, title and details about the 
-    project. 
-    */
+    /**
+     * This class is used to represent a post made about a project. 
+     * Post will hold information about the project, such as the user who posted 
+     * title and text information. 
+     */
 
     constructor(user, title, text) {
         super();
@@ -17,6 +16,10 @@ class Post extends Component {
     }
 
     getJSON() { 
+        /**
+         * This function is used to condense the infromation into a JSON string. This will hold all
+         * information about the post to be used as strings in other components. 
+         */
         return JSON.stringify({"user": this.userName, "title": this.postTitle, "text":this.postText});
     }
 
