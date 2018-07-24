@@ -13,6 +13,11 @@ class Post extends Component {
         this.userName = user;
         this.postTitle = title;
         this.postText = text;
+        this.getJSON = this.getJSON.bind(this); 
+    }
+
+    getJSON() { 
+        return JSON.stringify({"user": this.userName, "title": this.postTitle, "text":this.postText});
     }
 
     render() {

@@ -18,7 +18,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0)
+    background-color: var(--blue-grey);
 }
 
 .login-modal input.usernameField{
@@ -34,7 +34,7 @@
 }
 
 .login-modal input.usernameField:focus{
-    border: 2px solid lightskyblue;
+    border: 2px solid var(--blue-grey);
 }
 
 .login-modal  input.passwordField{
@@ -51,7 +51,7 @@
 
 
 .login-modal input.passwordField:focus{
-    border: 2px solid lightskyblue;
+    border: 2px solid var(--blue-grey);
 }
 
 .login-modal input.rememberMe {
@@ -106,7 +106,7 @@
 .open-modal-btn {
     position: absolute;
     left:50%;
-    background-color: aqua;
+    background-color: var(--blue-grey);
     font-size: 20px;
 }
 
@@ -199,7 +199,7 @@
 
 .new-post-modal input.postTitle:focus{
     width: 90%;
-    border: 2px solid lightskyblue;
+    border: 2px solid var(--blue-grey);
 }
 
 .new-post-modal textarea.postDescription{
@@ -218,14 +218,14 @@
 }
 
 .new-post-modal textarea.postDescription:focus{
-    border: 2px solid lightskyblue;
+    border: 2px solid var(--blue-grey);
 }
 
 .new-post-modal input.submitPost{
     padding: 10px 35px;
     font-size: 20px;
     font-family: "Verdana";
-    background-color: rgba(0,183,234,1);
+    background-color: var(--blue-grey);
     border: 1px solid black;
     border-radius: 4px;
     cursor: pointer;

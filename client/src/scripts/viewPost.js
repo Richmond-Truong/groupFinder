@@ -59,18 +59,19 @@ class PostPage extends Component{
 
     state = {
         modalOn : null,
-        data: {'name': '', 'title': '', 'text':''}
     }
 
     constructor(prop) {
       super(prop);
       this.comment_list = [];
+      var temp = JSON.parse(localStorage.getItem("post"));
+      this.savedpost = new Post(temp["user"], temp["title"], temp["text"])
       this.addComment = this.addComment.bind(this)
     }
 
     
     componentDidMount() {
-        console.log(this.props.location.state);
+        //console.log(this.props.location.state);
         this.setState({data: this.props.location.state})
     }
 
@@ -83,54 +84,9 @@ class PostPage extends Component{
         this.addComment("user5", '100px', 'hello im user5', []);
         return (
             <div className="page">
-                <div style={{height:'70px'}}/>
-                <div className="ui huge raised padded text container segment">
-                    <div className="ui left rail">
-                        <div className="ui card">
-                            <div className="image">
-                                <img src={require('./../images/sample_user.jpg')}/>
-                            </div>
-                            <div className="content">
-                                <a class="header">{this.state['data']['name']}</a>
-                                <div class="description">
-                                   this is {this.state['data']['name']}'s bio
-                                </div>
-                            </div>
-                            <div className="extra content">
-                                For money?
-                            </div>
-                            <div className="extra content">
-                                <a class="ui tag label">tag1</a>
-                                <a class="ui red tag label">tag2</a>
-                                <a class="ui teal tag label">tag3</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="content">
-                        <div className="header">
-                            {this.state['data']['title']}
-                        </div>
-                        <div className='ui divider'></div>
-                        <div className="description">
-                            {this.state['data']['text']}
-                        </div>
-                    </div>
-                    <div className="ui right rail">
-                        <div class="ui vertical rectangle test ad" data-text="Ad Unit 1"></div>
-                    </div>
-                </div>
-                <div className="ui raised very padded text container segment">
-                    <h3 className="ui dividing header">Comments</h3>
-                    {this.comment_list}
-                    <form class="ui reply form">
-                        <div class="field">
-                        <textarea></textarea>
-                        </div>
-                        <div class="ui primary submit labeled icon button">
-                        <i class="icon edit"></i> Add Comment
-                        </div>
-                    </form>
-                </div>
+              {this.savedpost.render()}
+              <div style={ {height:'70px'}}/>
+              {this.comment_list}
             </div> 
         )
     }

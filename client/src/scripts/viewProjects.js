@@ -12,6 +12,7 @@ class ProjectsPage extends Component{
         this.posts_list = [];
         this.KEY = 0;
         this.createPost = this.createPost.bind(this);
+        this.storePost = this.storePost.bind(this);
         this.loadData();
     }
 
@@ -19,13 +20,24 @@ class ProjectsPage extends Component{
         data: []
     }
 
+    storePost(key, post){
+    /*
+        Save the post to local storage to be used in multipul sessions
+    */
+        localStorage.setItem(key, post);
+    }
+
     createPost(user, title, text){
     /*
         Will create a post for rendering given the required fields. 
     */
         this.KEY = this.KEY + 1;
-        var state_vars = {name: user,  title: title, text:text};
-        return <Link key={this.KEY.toString()} to={{pathname:`/post/${user}`, state: state_vars}} style={{ textDecoration: 'none', color:'black'}}> {new Post(user, title, text).render()} </Link>;
+        var newPost = new Post(user, title, text); 
+        return (
+        <Link key={this.KEY.toString()} onClick={() => this.storePost("post", newPost.getJSON())} to={{pathname:`/post/${user}`}} style={{ textDecoration: 'none', color:'black'}}> 
+            {newPost.render()} 
+        </Link>
+        );
     }
 
     loadData() {
