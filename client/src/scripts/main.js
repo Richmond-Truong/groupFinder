@@ -4,6 +4,11 @@ import Projects from './viewProjects';
 import Posts from './viewPost';
 
 class Main extends Component{
+    /**
+     * This class determines what should be rendered based on the link.
+     * This represents all the class that should be rendered underneath the 
+     * UI class. 
+     */
     render ()
     {
       return (

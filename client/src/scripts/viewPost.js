@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Post from './posts.js';
 var commentCount = 0; 
+
 class Comment extends Component{
-  /*
-  A class to represent the comments made to a posting. 
-  Contains a user, details and position to refer to the 
-  number of indents to include when displaying. 
-  In addition there is children to refer to any reponses 
-  made to a comment. 
-  */
+  /** 
+   * A class to represent the comments made to a posting. 
+   * Contains a user, details and position to refer to the 
+   * number of indents to include when displaying. 
+   * In addition there is children to refer to any reponses 
+   * made to a comment. 
+   */
   constructor(user, position, text, child_list) {
       super();
       this.userName = user; 
@@ -56,6 +57,10 @@ class Comment extends Component{
 }
 
 class PostPage extends Component{
+    /**
+     * This class represents the page used to view specefic details about the 
+     * project posting. Users can comment about the posting and view details.
+     */
 
     state = {
         modalOn : null,

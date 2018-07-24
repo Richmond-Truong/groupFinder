@@ -3,6 +3,10 @@ import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 
 class TopBar extends Component {
+  /**
+   * Class that represents the UI component that will be displayed on every page. 
+   * This includes the modals for creating a post and login to the server. 
+   */
   state = {
     modalOn: null,
     title: '',
@@ -31,8 +35,11 @@ class TopBar extends Component {
     return (name === this.state.modalOn);
   }
 
-  /*Used to handle POST reequest for new Posting */
+  
   createNewPost = () => {
+    /**
+     * Used to handle POST reequest for new Posting 
+     */
     console.log("CREATING NEW POST: " + this.state.title + " , " + this.state.description);
 
     const formData = new FormData();
@@ -120,14 +127,6 @@ class TopBar extends Component {
             Home
         </Link>
         </div>
-      
-      // <div className="topnav">
-      //   {newPostModal}
-      //   {loginModal}
-      //   <Link to='/'> Home </Link>
-      //   <a onClick={() => this.openModal("createPost")}> Make Post</a>
-      //   <a onClick={() => this.openModal("Login")}> Login</a>
-      // </div>
     );
   }
 }
