@@ -38,7 +38,10 @@ class ProjectsPage extends Component {
         this.KEY = this.KEY + 1;
         var newPost = new Post(user, title, text);
         return (
-            <Link key={this.KEY.toString()} onClick={() => this.storePost("post", newPost.getJSON())} to={{ pathname: `/post/${user}` }} style={{ textDecoration: 'none', color: 'black' }}>
+            <Link key={this.KEY.toString()} 
+                onClick={() => this.storePost("post", newPost.getJSON())} 
+                to={{ pathname: `/post/${user}` }} style={{ textDecoration: 'none', color: 'black' }}>
+                
                 {newPost.render()}
             </Link>
         );
@@ -56,7 +59,7 @@ class ProjectsPage extends Component {
                 for (i = 0; i < data.length; i++) {
                     this.posts_list.push(this.createPost(data[i]['tags'], data[i]['title'], data[i]['description']));
                 }
-                this.setState({ data: this.posts_list, loading:false})
+                setTimeout( () => this.setState({ data: this.posts_list, loading:false}), 1000); 
             })
             .catch(err => this.setState({ data: this.createPost("Sample User", this.props.url, err.toString()) }))
     }
