@@ -125,8 +125,17 @@ class TopBar extends Component {
           <a className="item" onClick={() => this.openModal("Login")}> Login</a>
           <Link to='/' className="active item">
             Home
-        </Link>
-        </div>
+          </Link>
+
+
+          <div className="ui category search" style={{position:"absolute", right:"0px"}}>
+            <div className="ui icon input">
+              <input className="prompt" placeholder="Search posts..." type="text"/>
+              <i className="search icon"></i>
+            </div>
+            <div className="results"></div>
+          </div>
+      </div>
     );
   }
 }

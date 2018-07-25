@@ -13,11 +13,15 @@ class ProjectsPage extends Component {
         this.KEY = 0;
         this.createPost = this.createPost.bind(this);
         this.storePost = this.storePost.bind(this);
+    }
+
+    componentDidMount(){
         this.loadData();
     }
     
     state = {
-        data: []
+        data: [],
+        loading:true
     }
 
     storePost(key, post) {
@@ -52,17 +56,37 @@ class ProjectsPage extends Component {
                 for (i = 0; i < data.length; i++) {
                     this.posts_list.push(this.createPost(data[i]['tags'], data[i]['title'], data[i]['description']));
                 }
-                this.setState({ data: this.posts_list })
+                this.setState({ data: this.posts_list, loading:false})
             })
             .catch(err => this.setState({ data: this.createPost("Sample User", this.props.url, err.toString()) }))
     }
 
     render() {
-        return (
-            <div className="page">
-                {this.posts_list}
-            </div>
-        )
+        const { loading } = this.state;
+        
+    
+        if (loading) {
+            return ( 
+                <div className="page">
+                    <div className="ui icon message">
+                        <i className="notched circle loading icon"></i>
+                        <div className="content">
+                            <div className="header">
+                            Just one second
+                            </div>
+                            <p>We're fetching that content for you.</p>
+                        </div>
+                    </div>
+                </div>
+            )
+        }else {
+            return (
+                <div className="page">
+                    {this.posts_list}
+                </div>
+            )
+        }
+        
     }
 }
 
