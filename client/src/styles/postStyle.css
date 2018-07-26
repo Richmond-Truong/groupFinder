@@ -5,19 +5,6 @@ html, body{
     width: 100%;
     overflow: hidden;
 }
-.comment { 
-    position: relative;
-    padding: 9px 15px;
-    border: 2px solid var(--dark);
-    margin-bottom: 10px;
-    background: var(--white);
-    max-width: 80%;
-}
-
-.comment .user{
-    border-bottom: solid 2px black;
-    font-family: "Verdana";
-}
 
 .page {
     z-index: 0;
@@ -31,15 +18,13 @@ html, body{
     margin-top: -15px;
 }
 
-
-
 .post {
     left:20%;
     top:50px;
     position: relative;
     max-width: 800px; 
     min-height:100px;
-    border: 2px solid var(--dark);
+    border: 2px solid var(--blue-grey);
     background: white;
     transition: 0.5s;
     margin-bottom: 10px;
@@ -65,7 +50,7 @@ html, body{
 .post .Title{
     max-width:95%; 
     font-family: "Verdana";
-    border-bottom: solid 4px black;
+    border-bottom: solid 4px var(--blue);
     left: 200px;
 }
 .post .Text{
