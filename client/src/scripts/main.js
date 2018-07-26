@@ -2,6 +2,8 @@ import React, { Component }  from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Projects from './viewProjects';
 import Posts from './viewPost';
+import Login from './Login';
+import SignUp from './SignUp';
 
 class Main extends Component{
     /**
@@ -16,6 +18,8 @@ class Main extends Component{
             <Switch> 
                 <Route exact path='/' component={Projects}/>
                 <Route path='/post' component={Posts}/>
+                <Route path='/login' component={Login}/>
+                <Route path='/signup' component={SignUp}/>
             </Switch> 
         </main>
       )

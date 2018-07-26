@@ -5,6 +5,8 @@ import './styles/barStyle.css';
 import './styles/postStyle.css';
 import './styles/modalStyle.css';
 import './semantic/dist/semantic.css'
+import './styles/Login.css';
+import './styles/SignUp.css';
 import UI from './scripts/UI';
 import Main from './scripts/main';
 

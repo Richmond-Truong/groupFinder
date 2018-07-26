@@ -64,70 +64,13 @@ class TopBar extends Component {
   }
 
   render() {
-    const loginModal = (
-      <Modal className="login-modal"
-        verlayClassName="Overlay"
-        isOpen={this.isModalOpen("Login")}
-        onRequestClose={this.closeModal}
-      >
-        <button className="close-modal-btn" onClick={this.closeModal}> &#9747; </button>
-        <h1> Sign in </h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            <input className='usernameField' placeholder="Username" name="username" type="text" onChange={this.onChange} />
-          </label>
-          <label>
-            <input className='passwordField' placeholder="Password" name="password" type="password" onChange={this.onChange} />
-          </label>
-          <div className="field" style={{ position: 'absolute', top: '40%', left: '20%' }}>
-            <div className="ui checkbox">
-              <input tabindex="0" class="hidden" type="checkbox" />
-              <label>I agree to the Terms and Conditions</label>
-            </div>
-          </div>
-          <input className="ui button" style={{ position: 'absolute', top: '45%', left: '20%' }} type="submit" value="Login" onClick={this.userLogin} />
-        </form>
-        <a>New user? Click here to register</a>
-      </Modal>
-    );
-
-    const newPostModal = (
-      <div>
-        <Modal
-          className="new-post-modal"
-          isOpen={this.isModalOpen("createPost")}
-          onRequestClose={this.closeModal}
-          id="createPost"
-        >
-          <h1> Create a new post </h1>
-          <form>
-            <label>
-              <input className='postTitle' name="title" placeholder="Title.." type="text" onChange={this.onChange} />
-            </label>
-            <label>
-              <textarea className='postDescription' name="description" onChange={this.onChange} placeholder="Enter your description.." rows="10" cols="0" />
-            </label>
-          </form>
-          <div style={{ flexGrow: 1, position: 'relative', top: '70%', left: '70%', display: "block" }}>
-            <input className="ui button" type="submit" value="Post" onClick={this.createNewPost} />
-            <button className="ui button" onClick={this.closeModal}> Cancel </button>
-          </div>
-        </Modal>
-      </div>
-    );
 
     return (
   
       <div className="ui inverted menu" id="topnav">
-          {newPostModal}
-          {loginModal}
-          <a className="item" onClick={() => this.openModal("createPost")}> Make Post</a>
-          <a className="item" onClick={() => this.openModal("Login")}> Login</a>
-          <Link to='/' className="active item">
-            Home
-          </Link>
-
-
+          <Link to='/' className="active item" > Make Post </Link>
+          <Link to='/login' className="active item" > Login / Signup </Link>
+          <Link to='/' className="active item"> Home </Link>
           <div className="ui category search" style={{position:"absolute", right:"0px"}}>
             <div className="ui icon input">
               <input className="prompt" placeholder="Search posts..." type="text"/>
