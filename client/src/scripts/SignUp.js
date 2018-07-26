@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import {Button ,  Header , Form} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 
 class SignUp extends Component {
 
     render() {
         return (
-        <div>
+        <div className="page">
             <Header block id="box">
                 <Button id = "clicky">
                 <i class="facebook icon"></i>
-                Login With Facebook
+                    Login With Facebook
                 </Button> 
                 <Button id = "clicky2">
-                 Sign Up
+                    Sign Up
                 </Button>
                 <Form id='form7'>
                 <input type = 'text' placeholder='Email' className="boxes"/>
@@ -31,8 +32,8 @@ class SignUp extends Component {
                 <input type = "text" placeholder = "Skills" className= "boxes"/>
                     </Form>
                 <Header id="name">
-                Group Finder
-                    </Header>
+                    Group Finder
+                </Header>
                 <Header id="or">
                     ------------------- Or -------------------
                     </Header>
@@ -44,7 +45,7 @@ class SignUp extends Component {
                 <Header block id="smallbox">
                 <Header id="account">
                     Already have an account? 
-                    <a href=''> Sign in </a>
+                    <Link to='/login'> Sign in </Link>
                 </Header>
             </Header>
         </div>
