@@ -59,7 +59,7 @@ class ProjectsPage extends Component {
                 for (i = 0; i < data.length; i++) {
                     this.posts_list.push(this.createPost(data[i]['tags'], data[i]['title'], data[i]['description']));
                 }
-                setTimeout( () => this.setState({ data: this.posts_list, loading:false}), 1000); 
+                setTimeout( () => this.setState({ data: this.posts_list, loading:false}), 500); 
             })
             .catch(err => this.setState({ data: this.createPost("Sample User", this.props.url, err.toString()) }))
     }
