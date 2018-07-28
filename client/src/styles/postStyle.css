@@ -33,42 +33,85 @@ html, body{
 
 
 
-.post {
-    left:20%;
-    top:50px;
-    position: relative;
-    max-width: 800px; 
-    min-height:100px;
-    border: 2px solid var(--dark);
-    background: white;
-    transition: 0.5s;
-    margin-bottom: 10px;
-    display: flex;
+#area{
+    width: 1325px;    
+    height:220px;
+    position:relative;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,0%);
+    background-color:white;
 }
 
-.post .pic {
-    position: relative;
-    right:0px;
-    top:0px;
-    bottom:95%;
-    width: 100px;
-    height: 100px;
+#header1{
+    width:1250px;
+    height:200px;
+    background-color:white;
+    position:relative;
+    left:1%;
 }
 
-.post .Stats { 
-    height: 90%;
-    width: 100px;
-    text-align: center;
-    line-height: 25px;
-    border-radius: 9px;
+
+#pic{
+    width:100px;
+    height:100px;
+    position:absolute;
+    top:6%;
+    left:-0.5%;
+    display:block;
+    margin: 0 auto;
 }
-.post .Title{
-    max-width:95%; 
-    font-family: "Verdana";
-    border-bottom: solid 4px black;
-    left: 200px;
+
+#roles{
+    position: absolute;
+    left:71%;
+    top:82%;
+    font-size:17px;
+    word-spacing:6px;
 }
-.post .Text{
-    max-width:95%; 
-    min-height:130px;
+
+#username1{
+    font-size:11px;
+    color:black;
+    transform:translate(0%,-210%);
+}
+
+#eg{
+    text-align:center;
+    width:90px;
+}
+
+#cost1{
+    position:relative;
+    left:90.5%;
+    top:-20%;
+    color:green;
+}
+
+#location{
+    position:relative;
+    left:90.5%;
+    top:-33%;
+    font-size:20px;
+    width:130px;
+}
+
+#title1{
+    position:relative;
+    top:10%;
+    left:8.5%;
+    font-size:23px;
+    color:black;
+    font-weight: bold;
+}
+
+#paragraph1{
+    position:absolute;
+    top:30%;
+    left:8.5%;
+    font-size:15px;
+    color:rgb(77, 76, 76);
+    width:1000px;
+    overflow:hidden;
+    height:90px;
 }
