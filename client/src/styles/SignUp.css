@@ -28,8 +28,16 @@
     height:70px;
     background-color:white;
     position:absolute;
-    top:65%;
-    left:40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 850%);
+}
+
+#box{
+    position:absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -5%);
 }
 
 #or{
@@ -69,7 +77,7 @@
     border:1px solid black;
     border-radius: 5px;
     width:280px;
-    left:12%;
+    left:12.5%;
 }
 
 #form7{
