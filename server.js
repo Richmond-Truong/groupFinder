@@ -55,16 +55,52 @@ app.post('/post', function(req, res){
     var title = req.body.title;
     var description = req.body.description;
     var tags = req.body.tags;
+    var roles = req.body.roles;
+    var compensation = req.body.compensation;
     var date = Date.now();
+    var user = req.body.user;
     console.log(`title = ${title} description = ${description}`);
-    if(title === undefined || description === undefined || tags === undefined){
+    if(title === undefined || description === undefined || tags === undefined || roles === undefined || compensation === undefined){
         res.status(400);
-        res.send("missing title");
+        res.send("Missing param need : title, description, tags, roles, compensation");
     }else{
-        insert(postT, {"title" : title,"description" : description,"tags" : tags, "date" : date}, result =>{
-            if(result === true){
+        insert(postT, {"title" : title,"description" : description,"tags" : tags, "roles" : roles, "compensation" : compensation, "date" : date}, result =>{
+            if(result){
+                
+                updateUser({"username": user}, )
                 res.status(200);
                 res.send("Inserted post into database");
+            }else{
+                res.status(500);
+                res.send("Insert couldn't happen");
+            }
+        });
+    }
+});
+
+
+/*********************************************
+* post to user will add user into database
+*********************************************/
+app.post('/addUser', function(req, res){
+    var username = req.body.username;
+    var password = req.body.password;
+    var email = req.body.email;
+    var posts = [];
+    var comments = [];
+    var skills = req.body.skills;
+    console.log(`username = ${username} password = ${password} email = ${email} skills = $skills}`);
+    if(username === undefined || password === undefined || email === undefined || skills === undefined){
+        res.status(400);
+        res.send("Missing param need : username, password, email, skills");
+    }else{
+        insert(userT, {"username" : username, "password" : password, "email" : email, "posts" : posts, "comments" : comments, "skills" : skills}, result =>{
+            if(result === true){
+                res.status(200);
+                res.send("Inserted user into database");
+            }else{
+                res.status(500);
+                res.send("Insert couldn't happen");
             }
         });
     }
@@ -76,6 +112,26 @@ var server = app.listen(process.env.PORT || 8081, function(){
     console.log(`server is listening on ${host} , ${port}`);
 });
 
+function updateUser(colN, row, update, callback){
+    MongoClient.connect(mUrl, function(err, client) {
+        if(err){ 
+            callback(false);
+            throw err;
+        } 
+        const db = client.db("groupFinder");
+        const collection = db.collection(colN);
+        collection.updateOne(row, update, function(err, res){
+            if(err){ 
+                callback(false);
+                throw err;
+            }
+            console.log(`updated user`);
+        });
+        client.close();
+        callback(true);
+    });
+}
+
 /*********************************************
 * Takes collection name and insert object
 * Inserts insObj into collection
@@ -85,15 +141,15 @@ var server = app.listen(process.env.PORT || 8081, function(){
 function insert(colN, insObj, callback){
     MongoClient.connect(mUrl, function(err, client) {
         if(err){ 
-            throw err;
             callback(false);
+            throw err;
         } 
         const db = client.db("groupFinder");
         const collection = db.collection(colN);
-        collection.insertOne(insObj,function(err, res){
+        collection.insertOne(insObj, function(err, res){
             if(err){ 
-                throw err;
                 callback(false);
+                throw err;
             } 
             console.log(`inserted ${JSON.stringify(insObj)} into user tables`);
         })
