@@ -19,7 +19,7 @@
 
 #account{
     position:absolute;
-    top:35%;
+    top:82%;
     left:17%;
 }
 
@@ -30,7 +30,9 @@
     position:absolute;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 850%);
+    transform: translate(-50%, 700%);
+    border: solid black 1px;
+    border-radius:5px;
 }
 
 #box{
@@ -38,6 +40,8 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -5%);
+    border: solid black 1px;
+    border-radius:5px;
 }
 
 #or{
@@ -48,7 +52,10 @@
 
 #terms{
     position:absolute;
-    top:84.5%;
+    top:50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-40%);
 }
 
 #clicky2{
@@ -72,12 +79,13 @@
 }
 
 #form6{
-    top:35%;
+    position:absolute;
+    top:36%;
     font-family: 'Open Sans', sans-serif;
     border:1px solid black;
     border-radius: 5px;
     width:280px;
-    left:12.5%;
+    left:15%;
 }
 
 #form7{
