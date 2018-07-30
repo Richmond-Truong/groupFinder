@@ -26,7 +26,7 @@ class Post extends Component {
     render() {
         return (
 
-            <div className="post" style={this.state}>
+            <div className="post">
 
                 <div className="Stats">
                     <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100" />
