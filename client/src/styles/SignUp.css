@@ -4,7 +4,7 @@
     color:rgb(74, 155, 248);
     width:280px;
     position:absolute;
-    top:22%;
+    top:30%;
     left:15%;
     border: rgb(74, 155, 248) solid 2px;
 }
@@ -12,14 +12,14 @@
 #name{
     font-size:50px;
     position:absolute;
-    top:2%;
+    top:6%;
     left:14%;
     font-family: 'Lato', sans-serif;
 }
 
 #account{
     position:absolute;
-    top:82%;
+    top:84%;
     left:17%;
 }
 
@@ -42,12 +42,13 @@
     transform: translate(-50%, -5%);
     border: solid black 1px;
     border-radius:5px;
+    height:500px;
 }
 
 #or{
     position:absolute;
-    top:25.5%;
-    left:15%;
+    top:34.5%;
+    left:15.8%;
 }
 
 #terms{
@@ -56,6 +57,7 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%,-40%);
+    font-size:17px;
 }
 
 #clicky2{
@@ -63,7 +65,7 @@
     color:rgb(74, 155, 248);
     width:280px;
     position:absolute;
-    top:76%;
+    top:78%;
     left:15%;
     border:1px solid rgb(74, 155, 248); 
 }
@@ -80,7 +82,7 @@
 
 #form6{
     position:absolute;
-    top:36%;
+    top:46%;
     font-family: 'Open Sans', sans-serif;
     border:1px solid black;
     border-radius: 5px;
@@ -90,7 +92,7 @@
 
 #form7{
     position:absolute;
-    top:44%;
+    top:54%;
     font-family: 'Open Sans', sans-serif;
     border: 1px solid black;
     border-radius: 5px;
@@ -100,7 +102,7 @@
 
 #form3{
     position:absolute;
-    top:52%;
+    top:62%;
     left:15%;
     font-family: 'Open Sans', sans-serif;
     border: 1px solid black;
@@ -111,7 +113,7 @@
 #form4{
     position:absolute;
     left:15%;
-    top:60%;
+    top:70%;
     font-family: 'Open Sans', sans-serif;
     border: 1px solid black;
     border-radius: 5px;
@@ -121,7 +123,7 @@
 #form5{
     position:absolute;
     left:15%;
-    top:68%;
+    top:78%;
     font-family: 'Open Sans', sans-serif;
     border: 1px solid black;
     border-radius: 5px;
