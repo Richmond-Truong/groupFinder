@@ -120,7 +120,8 @@ class PostPage extends Component {
                     </div>
                     {/* The div holding an Ad */}
                     <div className="ui right rail" style={{ width: '30%' }}>
-                        <div className="ui vertical rectangle test ad" data-text="Ad Unit 1" style={{ width: '100%' }}></div>
+                        <div className="ui vertical rectangle test ad" data-text="Ad Unit 1" style={{ width: '100%' }}>
+                        </div>
                     </div>
                 </div>
                 <div className="ui raised very padded text container segment" >

@@ -47,7 +47,8 @@ class TopBar extends Component {
     formData.append('last_name', this.state.title);
     formData.append('email', this.state.description);
 
-    var newdata = '{"_id": "sdfsdfsdfsd", "date": 13424324523, "tags": "newUSER", "title": "' + this.state.title.toString() + '", "description": "' + this.state.description.toString() + '"}';
+    var newdata = '{"_id": "sdfsdfsdfsd", "date": 13424324523, "tags": "newUSER", "title": "' + 
+                    this.state.title.toString() + '", "description": "' + this.state.description.toString() + '"}';
     console.log(JSON.parse(newdata));
     this.closeModal();
     return fetch('https://groupfinder1.herokuapp.com/post', {
