@@ -32,6 +32,13 @@ class Post extends Component {
                     <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100" />
                     <div>Views: 15</div>
                     <div>Likes: 10 </div>
+                    <br/>
+                    <div className="extra content">
+                        <a className="ui tag label">tag1</a>
+                        <a className="ui red tag label">tag2</a>
+                        <a className="ui teal tag label">tag3</a>
+                    </div>
+                    <br/>
                 </div>
                 <div style={{ flexGrow: 1, position: 'relative', left: '30px' }}>
                     <div style={{zIndex:'2', position:'relative', left:'80%'}}> Job Title</div>

@@ -19,16 +19,15 @@ html, body{
 }
 
 .post {
-    left:20%;
-    top:50px;
+    top: 50px;
+    left:5%;
     position: relative;
-    max-width: 800px; 
+    max-width: 75%; 
     min-height:100px;
-    border: 2px solid var(--blue-grey);
     background: white;
     transition: 0.5s;
-    margin-bottom: 10px;
     display: flex;
+    border-bottom: solid 2px black;
 }
 
 .post .pic {
@@ -41,8 +40,8 @@ html, body{
 }
 
 .post .Stats { 
-    height: 90%;
-    width: 100px;
+    height: 100%;
+    width: 150px;
     text-align: center;
     line-height: 25px;
     border-radius: 9px;
@@ -50,7 +49,7 @@ html, body{
 .post .Title{
     max-width:95%; 
     font-family: "Verdana";
-    border-bottom: solid 4px var(--blue);
+    border-bottom: solid 4px grey;
     left: 200px;
 }
 .post .Text{
