@@ -15,6 +15,7 @@ html, body{
     overflow-y: scroll;
     overflow-x: hidden; 
     margin-top: -15px;
+    background-color: var(--light-blue);
 }
 
 .post {
@@ -28,6 +29,13 @@ html, body{
     display: flex;
     border-bottom: solid 2px black;
     box-shadow: 1px 1px 10px 1px grey;
+    animation: example 1s;
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {left:0px}
+    100%  {left:5%}
 }
 
 .post .pic {
