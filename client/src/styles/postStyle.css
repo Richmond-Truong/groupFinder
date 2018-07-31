@@ -60,6 +60,7 @@ html, body{
     left: 200px;
 }
 .post .Text{
+    max-width: calc(100% - 150px);
     position: relative;
     min-height:130px;
     display: flex;

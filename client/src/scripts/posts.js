@@ -44,12 +44,14 @@ class Post extends Component {
                     <div style={{zIndex:'2', position:'relative', left: '80%'}}> Location </div>
                     <div className="Title"> <h2> {this.postTitle} </h2></div>
                     <div className="Text">
-                        <div style={{lign:"left", maxWidth:"70%", position: "relative", wordBreak: "break-all",
+                        <div style={{lign:"left", width:"100%", position: "relative", wordBreak: "break-all",
                             wordWrap: "break-word", minHeight:"130px"}}>
                             {this.postText}
-                            sdfgsdgsdddddddddddddddddddddddddddsfgsfgsgsdgsdgsdfgssssssssssssssssssssssssssssssssssssssssdsg
+                            <br/>
+                            {"sdfgsdgsdddddddddddddddddddddddddddsfgsfgsgsfsdfsdfssdf\
+                            sdfsdfsdsdfsdfsdgsdgsdfgssssssssssssssssssssssssssssssssssssssssdsg"}
                         </div>
-                        <div style={{maxWidth:"30%", flexGrow: 1, position: 'relative', right:"10px", paddingLeft: "30px"}}>
+                        <div style={{width:"50px", flexGrow: 1, position: 'relative', right:"10px", paddingLeft: "30px"}}>
                             <h5> Positions </h5>
                             <ul>
                                 <li>Programmer</li>

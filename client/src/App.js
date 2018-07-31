@@ -7,11 +7,12 @@ import './styles/modalStyle.css';
 import './semantic/dist/semantic.css'
 import './styles/Login.css';
 import './styles/SignUp.css';
+import './styles/createPost.css';
 import UI from './scripts/UI';
 import Main from './scripts/main';
 
 class MainPage extends Component{
-  render() { 
+  render() {
     return (
       <div>
         <UI/>
@@ -22,11 +23,11 @@ class MainPage extends Component{
 }
 
 class App extends Component{
-  render() { 
+  render() {
     return (
-      <Switch> 
+      <Switch>
         <Route path='/' component={MainPage}/>
-      </Switch> 
+      </Switch>
     )
   }
 }
@@ -35,4 +36,4 @@ class App extends Component{
 
 
 
-export default App; 
+export default App;
