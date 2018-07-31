@@ -4,9 +4,9 @@ import { Header } from 'semantic-ui-react';
 
 class Post extends Component {
     /**
-     * This class is used to represent a post made about a project. 
-     * Post will hold information about the project, such as the user who posted 
-     * title and text information. 
+     * This class is used to represent a post made about a project.
+     * Post will hold information about the project, such as the user who posted
+     * title and text information.
      */
 
     constructor(user, title, text) {
@@ -14,12 +14,14 @@ class Post extends Component {
         this.userName = user;
         this.postTitle = title;
         this.postText = text;
-        this.getJSON = this.getJSON.bind(this); 
+        this.getJSON = this.getJSON.bind(this);
     }
-    getJSON() { 
+
+
+    getJSON() {
         /**
          * This function is used to condense the infromation into a JSON string. This will hold all
-         * information about the post to be used as strings in other components. 
+         * information about the post to be used as strings in other components.
          */
         return JSON.stringify({"user": this.userName, "title": this.postTitle, "text":this.postText});
     }
@@ -52,6 +54,7 @@ class Post extends Component {
                         </div>
                     </Header>
                 </Header>
+
             </div>
         );
     }

@@ -69,7 +69,7 @@ class ProjectsPage extends Component {
         
     
         if (loading) {
-            return ( 
+            return (
                 <div className="page">
                     <div className="ui icon message">
                         <i className="notched circle loading icon"></i>
@@ -79,13 +79,19 @@ class ProjectsPage extends Component {
                             </div>
                             <p>We're fetching that content for you.</p>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             )
         }else {
             return (
                 <div className="page">
+                    
+                    
+                
                     {this.posts_list}
+                    <div class="ui wide skyscraper test ad" data-text="Wide Skyscraper" style={{position:"absolute", 
+                        width:"15%", right:"10px", top:"0px"}}></div>
+                    
                 </div>
             )
         }
