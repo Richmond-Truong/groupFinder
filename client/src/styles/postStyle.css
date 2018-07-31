@@ -1,11 +1,5 @@
 @import "root.css";
 
-html, body{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
 .page {
     z-index: 0;
     position: absolute;
@@ -28,7 +22,7 @@ html, body{
     transition: 0.5s;
     display: flex;
     border-bottom: solid 2px black;
-    box-shadow: 1px 1px 10px 1px grey;
+    box-shadow: 1px 10px 10px 1px grey;
     animation: example 1s;
 }
 
