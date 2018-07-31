@@ -10,25 +10,32 @@ html, body{
     z-index: 0;
     position: absolute;
     width: 100%;
-    height: 95%;
+    height: calc(100% - 40px);
     align-content: center;
     overflow-y: scroll;
     overflow-x: hidden; 
-    background-image: url('../images/background.jpg');
     margin-top: -15px;
+    background-color: var(--light-blue);
 }
 
 .post {
-    left:20%;
-    top:50px;
+    top: 50px;
+    left:5%;
     position: relative;
-    max-width: 800px; 
+    max-width: 75%; 
     min-height:100px;
-    border: 2px solid var(--blue-grey);
     background: white;
     transition: 0.5s;
-    margin-bottom: 10px;
     display: flex;
+    border-bottom: solid 2px black;
+    box-shadow: 1px 1px 10px 1px grey;
+    animation: example 1s;
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {left:0px}
+    100%  {left:5%}
 }
 
 .post .pic {
@@ -41,8 +48,8 @@ html, body{
 }
 
 .post .Stats { 
-    height: 90%;
-    width: 100px;
+    height: 100%;
+    width: 150px;
     text-align: center;
     line-height: 25px;
     border-radius: 9px;
@@ -50,7 +57,7 @@ html, body{
 .post .Title{
     max-width:95%; 
     font-family: "Verdana";
-    border-bottom: solid 4px var(--blue);
+    border-bottom: solid 4px grey;
     left: 200px;
 }
 .post .Text{
