@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Header } from 'semantic-ui-react';
+
 
 class Post extends Component {
     /**
@@ -15,6 +17,7 @@ class Post extends Component {
         this.getJSON = this.getJSON.bind(this);
     }
 
+
     getJSON() {
         /**
          * This function is used to condense the infromation into a JSON string. This will hold all
@@ -25,31 +28,35 @@ class Post extends Component {
 
     render() {
         return (
-
-            <div className="post">
-
-                <div className="Stats">
-                    <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100" />
-                    <div>Views: 15</div>
-                    <div>Likes: 10 </div>
-                    <br/>
-                    <div className="extra content">
-                        <a className="ui tag label">tag1</a>
-                        <a className="ui red tag label">tag2</a>
-                        <a className="ui teal tag label">tag3</a>
-                    </div>
-                    <br/>
-                </div>
-                <div style={{ flexGrow: 1, position: 'relative', left: '30px' }}>
-                    <div style={{zIndex:'2', position:'relative', left:'80%'}}> Job Title</div>
-                    <div style={{zIndex:'2', position:'relative', left: '80%'}}> Location </div>
-                    <div className="Title"> <h2> {this.postTitle} </h2></div>
-                    <div className="Text"> {this.postText}</div>
-
-                </div>
+            <div>
+                <Header block id="area">
+                    <Header id="header1">
+                        <h1 id="title1">
+                            {this.postTitle}
+                        </h1>
+                        <p1 id="paragraph1">
+                            {this.postText}
+                        </p1>
+                        <h2 id="cost1">
+                            40$
+                        </h2>
+                        <h2 id="location">
+                            Toronto
+                        </h2>
+                        <p2 id="roles">
+                            Roles Needed: Head-Chef  Sous-Chef  Waiter
+                        </p2>
+                        <div id="eg">
+                            <img src={require('../images/sample_user.jpg')} id="pic"/>
+                            <h3 id="username1">
+                                CrazyEight
+                            </h3>
+                        </div>
+                    </Header>
+                </Header>
 
             </div>
-        )
+        );
     }
 
 }
