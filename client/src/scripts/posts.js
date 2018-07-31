@@ -6,7 +6,6 @@ class Post extends Component {
      * Post will hold information about the project, such as the user who posted
      * title and text information.
      */
-
     constructor(user, title, text) {
         super();
         this.userName = user;
@@ -27,7 +26,6 @@ class Post extends Component {
         return (
 
             <div className="post">
-
                 <div className="Stats">
                     <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100" />
                     <div>Views: 15</div>
@@ -40,9 +38,15 @@ class Post extends Component {
                     </div>
                     <br/>
                 </div>
-                <div style={{ flexGrow: 1, position: 'relative', left: '30px' }}>
-                    <div style={{zIndex:'2', position:'relative', left: '80%'}}> Location </div>
-                    <div className="Title"> <h2> {this.postTitle} </h2></div>
+                <div style={{ flexGrow: 1, position: 'relative', left: '30px'}}>
+                    <div style={{flexGrow: 1, zIndex:'2', position:'relative', right:'-70%', width:"500px"}}>
+                        Location: Toronto, ON. Canada
+                    </div>
+                    <div className="Title">
+                        <h2>
+                            {this.postTitle}
+                        </h2>
+                    </div>
                     <div className="Text">
                         <div style={{lign:"left", width:"100%", position: "relative", wordBreak: "break-all",
                             wordWrap: "break-word", minHeight:"130px"}}>
@@ -64,7 +68,6 @@ class Post extends Component {
             </div>
         )
     }
-
 }
 
 export default Post;
