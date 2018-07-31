@@ -68,9 +68,9 @@ class TopBar extends Component {
     return (
   
       <div className="ui inverted menu" id="topnav">
-          <Link to='/' className="active item" > Make Post </Link>
           <Link to='/login' className="active item" > Login / Signup </Link>
           <Link to='/' className="active item"> Home </Link>
+          <Link to='/createpost' className="active item" > Make Post </Link>
           <div className="ui category search" style={{position:"absolute", right:"0px"}}>
             <div className="ui icon input">
               <input className="prompt" placeholder="Search posts..." type="text"/>
