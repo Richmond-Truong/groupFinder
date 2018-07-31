@@ -13,16 +13,16 @@ html, body{
     height: calc(100% - 40px);
     align-content: center;
     overflow-y: scroll;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     margin-top: -15px;
     background-color: var(--light-blue);
 }
 
 .post {
     top: 50px;
-    left:5%;
+    left:10%;
     position: relative;
-    max-width: 75%; 
+    max-width: 80%;
     min-height:100px;
     background: white;
     transition: 0.5s;
@@ -35,7 +35,7 @@ html, body{
 /* Standard syntax */
 @keyframes example {
     0%   {left:0px}
-    100%  {left:5%}
+    100%  {left:10%}
 }
 
 .post .pic {
@@ -47,7 +47,7 @@ html, body{
     height: 100px;
 }
 
-.post .Stats { 
+.post .Stats {
     height: 100%;
     width: 150px;
     text-align: center;
@@ -55,12 +55,12 @@ html, body{
     border-radius: 9px;
 }
 .post .Title{
-    max-width:95%; 
+    max-width:95%;
     font-family: "Verdana";
     border-bottom: solid 4px grey;
     left: 200px;
 }
 .post .Text{
-    max-width:95%; 
+    max-width:95%;
     min-height:130px;
 }
