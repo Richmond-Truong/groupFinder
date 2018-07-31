@@ -57,7 +57,6 @@ html, body{
 .post .Title{
     max-width:95%;
     font-family: "Verdana";
-    border-bottom: solid 4px grey;
     left: 200px;
 }
 .post .Text{

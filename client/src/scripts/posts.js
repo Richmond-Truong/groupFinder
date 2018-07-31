@@ -41,13 +41,20 @@ class Post extends Component {
                     <br/>
                 </div>
                 <div style={{ flexGrow: 1, position: 'relative', left: '30px' }}>
-                    <div style={{zIndex:'2', position:'relative', left:'80%'}}> Job Title</div>
                     <div style={{zIndex:'2', position:'relative', left: '80%'}}> Location </div>
                     <div className="Title"> <h2> {this.postTitle} </h2></div>
-                    <div className="Text"> {this.postText}</div>
-
+                    <div className="Text">
+                        {this.postText}
+                        <div style={{ float:"right", flexGrow: 1, position: 'relative', right:"10px", padding: "10px"}}>
+                            <h5> Positions </h5>
+                            <ul>
+                                <li>Programmer</li>
+                                <li>Tester</li>
+                                <li>Project Lead</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         )
     }
