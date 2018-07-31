@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {Button ,  Header , Form} from 'semantic-ui-react';
+import {Button ,  Header , Form, Popup, Icon} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-function checkPasswords(password,confirmation){
+function checkPasswords(){
     if(document.getElementById("form3").value != document.getElementById("form4").value){
         document.getElementById("form4").style.backgroundColor="pink"
         document.getElementById("form3").style.backgroundColor="pink"
@@ -31,7 +31,11 @@ class SignUp extends Component {
                     </Button>
                     <input type='text' placeholder='Username' className="boxes" id ="form6" maxLength="16" minLength="2"/>
                     <input type = 'text' placeholder='Email' className="boxes" id='form7' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" title="Not a Valid Email"/>
-                    <input type= "password" placeholder = 'Password' className = "boxes" id = "form3" onChange={checkPasswords}/>
+                    <Popup
+                        trigger={<input type= "password" placeholder = 'Password' className = "boxes" id = "form3" onChange={checkPasswords} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*['@', '$', '#','!','%','^','*','(',')']).{8,}" title="The password is required to have a special character, number, lowercase, uppercase letter and be 8 letters long." />}
+                        content="The password is required to have a special character, number, lowercase, uppercase letter and be 8 letters long."
+                        basic
+                    />
                     <input type = "password" placeholder = 'Confirm Password' className = "boxes" id= "form4" onChange={checkPasswords} /> 
                     <Header id="name">
                         Group Finder
