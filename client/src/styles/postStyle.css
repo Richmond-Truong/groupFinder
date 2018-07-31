@@ -60,6 +60,8 @@ html, body{
     left: 200px;
 }
 .post .Text{
-    max-width:95%;
+    position: relative;
     min-height:130px;
+    display: flex;
+    flex-direction: row;
 }
