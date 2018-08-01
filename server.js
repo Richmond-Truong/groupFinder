@@ -48,6 +48,23 @@ app.get('/post', function (req, res) {
     })
 });
 
+ /*********************************************
+* Login
+*********************************************/
+app.post('/login', function(req,res){
+    var username = req.params.userId;
+    var password = req.param.password;
+    getData(userT,{username: username}, result =>{
+        if(result.password === password){
+            res.status(200);
+            res.send("Login successful");
+        }else{
+            res.status(401);
+            res.send("Auth error");
+        }
+    });
+});
+
 /*********************************************
 * post to post will add post into database
 *********************************************/
