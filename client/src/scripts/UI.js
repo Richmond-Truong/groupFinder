@@ -72,13 +72,6 @@ class TopBar extends Component {
           <Link to='/login' className="active item" > Login / Signup </Link>
           <Link to='/' className="active item"> Home </Link>
           <Link to='/createpost' className="active item" > Make Post </Link>
-          <div className="ui category search" style={{position:"absolute", right:"0px"}}>
-            <div className="ui icon input">
-              <input className="prompt" placeholder="Search posts..." type="text"/>
-              <i className="search icon"></i>
-            </div>
-            <div className="results"></div>
-          </div>
       </div>
     );
   }
