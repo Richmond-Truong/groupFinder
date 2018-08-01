@@ -105,9 +105,9 @@ app.post('/addUser', function(req, res){
     var email = req.body.email;
     var posts = [];
     var comments = [];
-    var skills = req.body.skills;
+    var skills =  [];
     console.log(`username = ${username} password = ${password} email = ${email} skills = $skills}`);
-    if(username === undefined || password === undefined || email === undefined || skills === undefined){
+    if(username === undefined || password === undefined || email === undefined ){
         res.status(400);
         res.send("Missing param need : username, password, email, skills");
     }else{
