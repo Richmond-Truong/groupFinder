@@ -10,6 +10,7 @@
         "fs": "0.0.2",
         "mongodb": "^3.0.10",
         "multer": "^1.3.0",
+        "semantic-ui": "^2.3.3",
         "sql.js": "0.3.2"
     },
     "scripts": {

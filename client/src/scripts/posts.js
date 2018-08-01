@@ -1,100 +1,64 @@
-import React, { Component }  from 'react';
-import Modal from 'react-modal';
+import React, { Component } from 'react';
+import { Header } from 'semantic-ui-react';
 
-var postCount = 0; 
 
-class Post extends Component{
+class Post extends Component {
+    /**
+     * This class is used to represent a post made about a project.
+     * Post will hold information about the project, such as the user who posted
+     * title and text information.
+     */
 
     constructor(user, title, text) {
         super();
-        this.userName = user; 
-        this.postTitle = title; 
+        this.userName = user;
+        this.postTitle = title;
         this.postText = text;
+        this.getJSON = this.getJSON.bind(this);
+    }
+
+
+    getJSON() {
+        /**
+         * This function is used to condense the infromation into a JSON string. This will hold all
+         * information about the post to be used as strings in other components.
+         */
+        return JSON.stringify({"user": this.userName, "title": this.postTitle, "text":this.postText});
     }
 
     render() {
         return (
-            <div className="post" key={postCount} style={this.state}> 
-                <div className="Title"> {this.postTitle}</div>
-                <div className="Text"> {this.postText}</div> 
-                <div className="Title"> {this.userName}</div>
-                <div className="pic">
-                    <img alt="" src={require('./../images/sample_user.jpg')} width="100" height="100"/>
-                </div>
+            <div>
+                <Header block id="area">
+                    <Header id="header1">
+                        <h1 id="title1">
+                            {this.postTitle}
+                        </h1>
+                        <p1 id="paragraph1">
+                            {this.postText}
+                        </p1>
+                        <h2 id="cost1">
+                            40$
+                        </h2>
+                        <h2 id="location">
+                            Toronto
+                        </h2>
+                        <p2 id="roles">
+                            ExampleJob Chef
+                        </p2>
+                        <div id="eg">
+                            <img src={require('../images/sample_user.jpg')} id="pic"/>
+                            <h3 id="username1">
+                                CrazyEight
+                            </h3>
+                        </div>
+                    </Header>
+                </Header>
+
             </div>
-            )
+        );
     }
 
 }
 
-class Page extends Component{
-    constructor(prop) {
-        super(prop);
-        this.posts_list = [];
-        this.addPost = this.addPost.bind(this)
-    }
-
-    state = {
-        modalOn : null
-    }
-
-    openModal = (name) =>{
-        this.setState({modalOn : name});
-    }
-
-    closeModal = () =>{
-        this.setState({modalOn: null});
-    }
-
-    isModalOpen = (name) =>{
-        return (name === this.state.modalOn);
-    }
-
-    addPost(user, title, text){
-        this.posts_list.push(new Post(user, title, text).render())
-        postCount = postCount+1;
-    }
-
-    loadData() {
-        fetch('https://groupfinder1.herokuapp.com/post')
-            .then(response => response.json())
-            .then(data => {
-                this.setState({data: data })
-        })
-            .catch(err => console.error(this.props.url, err.toString()))
-    }
-
-    render() { 
-        this.addPost("Sample User", "Title", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        this.addPost("Sample User", "Title2", "Some sample text");
-        console.log(this.posts_list); 
-        this.loadData();
-
-        return [
-          
-            <div className="page" key="1">
-                <Modal
-                    isOpen={this.isModalOpen("createPost")}
-                    onRequestClose={this.closeModal}
-                    id = "createPost">
-                    <h1> test </h1>
-                </Modal>
-                {this.posts_list}
-            </div> 
-        ]
-    }
-}
-
-export default Page;
+export default Post;

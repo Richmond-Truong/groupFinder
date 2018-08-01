@@ -1,0 +1,131 @@
+
+#clicky{
+    background-color:white;
+    color:rgb(74, 155, 248);
+    width:280px;
+    position:absolute;
+    top:30%;
+    left:15%;
+    border: rgb(74, 155, 248) solid 2px;
+}
+
+#name{
+    font-size:50px;
+    position:absolute;
+    top:6%;
+    left:14%;
+    font-family: 'Lato', sans-serif;
+}
+
+#account{
+    position:absolute;
+    top:84%;
+    left:17%;
+}
+
+#smallbox{
+    width:400px;
+    height:70px;
+    background-color:white;
+    position:absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 700%);
+    border: solid black 1px;
+    border-radius:5px;
+}
+
+#box{
+    position:absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -5%);
+    border: solid black 1px;
+    border-radius:5px;
+    height:500px;
+}
+
+#or{
+    position:absolute;
+    top:34.5%;
+    left:15.8%;
+}
+
+#terms{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-40%);
+    font-size:17px;
+}
+
+#clicky2{
+    background-color:white;
+    color:rgb(74, 155, 248);
+    width:280px;
+    position:absolute;
+    top:78%;
+    left:15%;
+    border:1px solid rgb(74, 155, 248); 
+}
+
+#clicky:active{
+    color:white;
+    background-color:rgb(74, 155, 248);
+}
+
+#clicky2:active{
+    color:white;
+    background-color:rgb(74, 155, 248);
+}
+
+#form6{
+    position:absolute;
+    top:46%;
+    font-family: 'Open Sans', sans-serif;
+    border:1px solid black;
+    border-radius: 5px;
+    width:280px;
+    left:15%;
+}
+
+#form7{
+    position:absolute;
+    top:54%;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width:280px;
+    left:15%;
+}
+
+#form3{
+    position:absolute;
+    top:62%;
+    left:15%;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width:280px;
+}
+
+#form4{
+    position:absolute;
+    left:15%;
+    top:70%;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width:280px;
+}
+
+#form5{
+    position:absolute;
+    left:15%;
+    top:78%;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width:280px;
+}
