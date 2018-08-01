@@ -44,7 +44,7 @@ class Post extends Component {
                             Toronto
                         </h2>
                         <p2 id="roles">
-                            Roles Needed: Head-Chef  Sous-Chef  Waiter
+                            ExampleJob Chef
                         </p2>
                         <div id="eg">
                             <img src={require('../images/sample_user.jpg')} id="pic"/>
