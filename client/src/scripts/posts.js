@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Header } from 'semantic-ui-react';
+
 
 class Post extends Component {
     /**
@@ -14,6 +16,7 @@ class Post extends Component {
         this.getJSON = this.getJSON.bind(this);
     }
 
+
     getJSON() {
         /**
          * This function is used to condense the infromation into a JSON string. This will hold all
@@ -24,49 +27,35 @@ class Post extends Component {
 
     render() {
         return (
-
-            <div className="post">
-                <div className="Stats">
-                    <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100" />
-                    <div>Views: 15</div>
-                    <div>Likes: 10 </div>
-                    <br/>
-                    <div className="extra content">
-                        <a className="ui tag label">tag1</a>
-                        <a className="ui red tag label">tag2</a>
-                        <a className="ui teal tag label">tag3</a>
-                    </div>
-                    <br/>
-                </div>
-                <div style={{ flexGrow: 1, position: 'relative', left: '30px'}}>
-                    <div style={{flexGrow: 1, zIndex:'2', position:'relative', right:'-70%', width:"500px"}}>
-                        Location: Toronto, ON. Canada
-                    </div>
-                    <div className="Title">
-                        <h2>
+            <div>
+                <Header block id="area">
+                    <Header id="header1">
+                        <h1 id="title1">
                             {this.postTitle}
-                        </h2>
-                    </div>
-                    <div className="Text">
-                        <div style={{lign:"left", width:"100%", position: "relative", wordBreak: "break-all",
-                            wordWrap: "break-word", minHeight:"130px"}}>
+                        </h1>
+                        <p1 id="paragraph1">
                             {this.postText}
-                            <br/>
-                            {"sdfgsdgsdddddddddddddddddddddddddddsfgsfgsgsfsdfsdfssdf\
-                            sdfsdfsdsdfsdfsdgsdgsdfgssssssssssssssssssssssssssssssssssssssssdsg"}
+                        </p1>
+                        <h2 id="cost1">
+                            40$
+                        </h2>
+                        <h2 id="location">
+                            Toronto
+                        </h2>
+                        <p2 id="roles">
+                            ExampleJob Chef
+                        </p2>
+                        <div id="eg">
+                            <img src={require('../images/sample_user.jpg')} id="pic" alt="profile"/>
+                            <h3 id="username1">
+                                CrazyEight
+                            </h3>
                         </div>
-                        <div style={{width:"50px", flexGrow: 1, position: 'relative', right:"10px", paddingLeft: "30px"}}>
-                            <h5> Positions </h5>
-                            <ul>
-                                <li>Programmer</li>
-                                <li>Tester</li>
-                                <li>Project Lead</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                    </Header>
+                </Header>
+
             </div>
-        )
+        );
     }
 }
 

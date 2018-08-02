@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {Divider, Form, Header} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+
 class CreatePost extends Component{
     state = {
         title: '',
         description: '',
         compensationMethod: ''
     }
+
     render() {
-        const {value} = this.state;
         return(
             <div className="page">
                 <div className="popup">
