@@ -49,14 +49,18 @@ class Post extends Component {
                         </h2>
                     </div>
                     <div className="Text">
-                        <div style={{lign:"left", width:"100%", position: "relative", wordBreak: "break-all",
+                        <div style={{lign:"left", width:"calc(100% - 50px)", position: "relative", wordBreak: "break-all",
                             wordWrap: "break-word", minHeight:"130px"}}>
                             {this.postText}
                             <br/>
                             {"sdfgsdgsdddddddddddddddddddddddddddsfgsfgsgsfsdfsdfssdf\
                             sdfsdfsdsdfsdfsdgsdgsdfgssssssssssssssssssssssssssssssssssssssssdsg"}
                         </div>
+
                         <div style={{width:"50px", flexGrow: 1, position: 'relative', right:"10px", paddingLeft: "30px"}}>
+                            <h2 style={{color:"green"}}>
+                                40$
+                            </h2>
                             <h5> Positions </h5>
                             <ul>
                                 <li>Programmer</li>
