@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './posts.js';
+import Post from './post_old.js';
 import {Advertisement, Button, Card, Comment, Divider, Item, Form, Header, Image, Label, Rail, Segment} from 'semantic-ui-react';
 
 class Comments extends Component {

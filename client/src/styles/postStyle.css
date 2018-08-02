@@ -23,23 +23,28 @@
     display: flex;
     border-bottom: solid 2px black;
     box-shadow: 1px 10px 10px 1px grey;
-    animation: example 1s;
+    animation: shiftRight 1s;
 }
 
 /* Standard syntax */
+@keyframes shiftRight {
+    0%   {left:0px}
+    100%  {left:10%}
+}
+
 @keyframes example {
     0%   {left:0px}
-    100%  {left:50%}
+    100%  {left:5%}
 }
+
 
 
 
 #area{
-    width: 100%;
+    width: 90%;
     height:220px;
     position:relative;
     left:50%;
-    transform: translate(-50%,0%);
     background-color:white;
     animation: example 1s;
 }

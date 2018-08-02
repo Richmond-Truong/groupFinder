@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './posts';
+import Post from './post_old.js';
 import { Link } from 'react-router-dom'
 
 class ProjectsPage extends Component {
