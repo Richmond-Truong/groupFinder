@@ -15,6 +15,9 @@ function checkPasswords(){
     }
 }
 
+function movepage(){
+    window.location = "/";
+  }
 
 class SignUp extends Component {
 
@@ -25,10 +28,12 @@ class SignUp extends Component {
                     <Button id = "clicky">
                         <i class="facebook icon"></i>
                         Login With Facebook
-                    </Button> 
-                    <Button id = "clicky2">
-                        Sign Up
                     </Button>
+                    <Link to='/signedup'> 
+                        <Button id = "clicky2" onClick={setTimeout(movepage, 3000)}>
+                            Sign Up
+                        </Button>
+                    </Link>
                     <input type='text' placeholder='Username' className="boxes" id ="form6" maxLength="16" minLength="2"/>
                     <input type = 'text' placeholder='Email' className="boxes" id='form7' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" title="Not a Valid Email"/>
                     <Popup

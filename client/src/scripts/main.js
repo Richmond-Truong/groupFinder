@@ -5,6 +5,8 @@ import Posts from './viewPost';
 import Login from './Login';
 import SignUp from './SignUp';
 import CreatePost from './createPost';
+import signedIn from './signedIn';
+import signedUp from './signedUp';
 
 class Main extends Component{
     /**
@@ -22,6 +24,8 @@ class Main extends Component{
                 <Route path='/login' component={Login}/>
                 <Route path='/signup' component={SignUp}/>
                 <Route path='/createpost' component={CreatePost}/>
+                <Route path='/signedin' component={signedIn}/>
+                <Route path='/signedup' component={signedUp}/>
             </Switch> 
         </main>
       )

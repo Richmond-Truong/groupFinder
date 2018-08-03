@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {Button ,  Header , Form} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
+function movepage(){
+  window.location = "/";
+}
 
 class Login extends Component {
 
@@ -21,9 +24,11 @@ class Login extends Component {
             <Header id='replaImage'>
             Group Finder
               </Header>
-            <Button id="login">
-            Login
-            </Button>
+            <Link to='/signedin'>
+              <Button id="login" onClick= {setTimeout(movepage, 3000)}>
+              Login
+              </Button>
+            </Link>
               <a href='' id = "link">
                 <p1>Forgot Password?</p1>
               </a>

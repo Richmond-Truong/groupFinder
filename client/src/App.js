@@ -10,6 +10,8 @@ import './styles/SignUp.css';
 import './styles/createPost.css';
 import UI from './scripts/UI';
 import Main from './scripts/main';
+import './styles/signedIn.css';
+import './styles/signedUp.css';
 
 class MainPage extends Component{
   render() { 
