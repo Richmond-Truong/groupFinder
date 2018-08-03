@@ -52,10 +52,16 @@ app.get('/post', function (req, res) {
 * Login
 *********************************************/
 app.post('/login', function(req,res){
-    var username = req.params.userId;
-    var password = req.param.password;
+    var username = req.body.username;
+    var password = req.body.password;
+    console.log(`username = ${username}, password = ${password}`)
     getData(userT,{username: username}, result =>{
-        if(result.password === password){
+        console.log(`result = ${result} password = ${result[0].password}`);
+        if(result.length < 1){
+            res.status(404);
+            res.send("no such user");
+        }
+        else if(result[0].password === password){
             res.status(200);
             res.send("Login successful");
         }else{
@@ -111,14 +117,21 @@ app.post('/addUser', function(req, res){
         res.status(400);
         res.send("Missing param need : username, password, email, skills");
     }else{
-        insert(userT, {"username" : username, "password" : password, "email" : email, "posts" : posts, "comments" : comments, "skills" : skills}, result =>{
-            if(result === true){
-                res.status(200);
-                res.send("Inserted user into database");
+        getData(userT,{username: username}, result =>{
+            if(result.length > 0){
+                res.status(400);
+                res.send("Username already exists");
             }else{
-                res.status(500);
-                res.send("Insert couldn't happen");
-            }
+                insert(userT, {"username" : username, "password" : password, "email" : email, "posts" : posts, "comments" : comments, "skills" : skills}, result =>{
+                    if(result === true){
+                        res.status(200);
+                        res.send("Inserted user into database");
+                    }else{
+                        res.status(500);
+                        res.send("Insert couldn't happen");
+                    }
+                });
+            }   
         });
     }
 });
