@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Button ,  Header , Form, Popup} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-const querystring = require('querystring');
 var http = require('http');
 
 function checkPasswords(){
