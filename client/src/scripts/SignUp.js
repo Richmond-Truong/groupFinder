@@ -4,22 +4,22 @@ import { Link } from 'react-router-dom';
 var http = require('http');
 
 function checkPasswords(){
-    if(document.getElementById("form3").value !== document.getElementById("form4").value){
-        document.getElementById("form4").style.backgroundColor="pink"
-        document.getElementById("form3").style.backgroundColor="pink"
-        document.getElementById("clicky2").disabled = true;
+    if(document.getElementById("password").value !== document.getElementById("confirmPassword").value){
+        document.getElementById("confirmPassword").style.backgroundColor="pink"
+        document.getElementById("password").style.backgroundColor="pink"
+        document.getElementById("Signup").disabled = true;
     }
     else{
-        document.getElementById("form4").style.backgroundColor="white"
-        document.getElementById("form3").style.backgroundColor="white"
-        document.getElementById("clicky2").disabled = false;
+        document.getElementById("confirmPassword").style.backgroundColor="white"
+        document.getElementById("password").style.backgroundColor="white"
+        document.getElementById("Signup").disabled = false;
     }
 }
 function signUp(){
     var postData = JSON.stringify({
-        'username' : document.getElementById("form6").value,
-        'password' : document.getElementById("form4").value,
-        'email' : document.getElementById("form7").value
+        'username' : document.getElementById("username").value,
+        'password' : document.getElementById("confirmPassword").value,
+        'email' : document.getElementById("email").value
     });
     var post_options = {
         host: 'groupfinder1.herokuapp.com',
@@ -59,21 +59,21 @@ class SignUp extends Component {
         return (
         <div className="page">
                 <Form id="box">
-                    <Button id = "clicky">
+                    <Button id = "facebookSignup">
                         <i class="facebook icon"></i>
                         Login With Facebook
                     </Button> 
-                    <Button id = "clicky2" onClick={signUp} >
+                    <Button id = "Signup" onClick={signUp} >
                         Sign Up
                     </Button>
-                    <input type='text' placeholder='Username' className="boxes" id ="form6" maxLength="16" minLength="2"/>
-                    <input type = 'text' placeholder='Email' className="boxes" id='form7' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" title="Not a Valid Email"/>
+                    <input type='text' placeholder='Username' className="boxes" id ="username" maxLength="16" minLength="2"/>
+                    <input type = 'text' placeholder='Email' className="boxes" id='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" title="Not a Valid Email"/>
                     <Popup
-                        trigger={<input type= "password" placeholder = 'Password' className = "boxes" id = "form3" onChange={checkPasswords} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*['@', '$', '#','!','%','^','*','(',')']).{8,}" title="The password is required to have a special character, number, lowercase, uppercase letter and be 8 letters long." />}
+                        trigger={<input type= "password" placeholder = 'Password' className = "boxes" id = "password" onChange={checkPasswords} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*['@', '$', '#','!','%','^','*','(',')']).{8,}" title="The password is required to have a special character, number, lowercase, uppercase letter and be 8 letters long." />}
                         content="The password is required to have a special character, number, lowercase, uppercase letter and be 8 letters long."
                         basic
                     />
-                    <input type = "password" placeholder = 'Confirm Password' className = "boxes" id= "form4" onChange={checkPasswords} /> 
+                    <input type = "password" placeholder = 'Confirm Password' className = "boxes" id= "confirmPassword" onChange={checkPasswords} /> 
                     <Header id="name">
                         Group Finder
                     </Header>
@@ -82,7 +82,7 @@ class SignUp extends Component {
                     </Header>
                     <Header block id="smallbox">
                         <Header id="terms">
-                            By signing up, you agree to our 
+                            By Signupg up, you agree to our 
                             <a href=''> terms of service.</a>
                         </Header>
                     </Header>
