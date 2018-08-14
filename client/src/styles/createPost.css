@@ -1,14 +1,14 @@
 @import "root.css";
 
 #createPostBox{
-    width: 60%;
-    height: 85%;
+    width: 900px;
+    height: 790px;
     background-color: white;
     position:absolute;
     top                   : 5%;
-    left                  : 20%;
+    left                  : 25%;
     right                 : auto;
-    bottom                : auto; 
+    bottom                : auto;
 }
 
 #createPostHeader{
@@ -18,6 +18,7 @@
 #createPostTitle{
     font-size: 16px;
     font-family: 'Lato', sans-serif;
+    min-width: 820px;
 }
 
 #createPostDescription{
@@ -30,7 +31,6 @@
     font-family: 'Lato', sans-serif;
 }
 
-
 #createPostTags{
     margin-top: 10px;
     padding: 10px;
@@ -39,40 +39,42 @@
 
 #createPostExit{
     position: absolute;
-    top: 110%;
+    top: 107%;
+    left: 2%;
     padding: 15px 25px;
-    color:rgb(16, 181, 236);
+    border-radius: 4px;
+    color:var(--blue);
     background-color: white;
-    border:rgb(16, 181, 236) solid;
+    border:var(--blue) solid;
 }
 
 #createPostExit:hover{
     color:white;
-    background-color:rgb(16, 181, 236);
+    background-color:var(--blue);
 }
 
 #createPostExit:active{
-    color:rgb(16, 181, 236);
+    color:var(--blue);
     background-color: white;
 }
 
+
 #createPostSubmit{
     position: absolute;
-    top: 110%;
-    left: 90%;
+    top: 107%;
+    left: 85%;
     padding: 15px 25px;
-    color:rgb(16, 181, 236);
+    color:var(--blue);
     background-color: white;
-    border:rgb(16, 181, 236) solid;
+    border:var(--blue) solid;
 }
 
 #createPostSubmit:hover{
     color:white;
-    background-color:rgb(16, 181, 236);
+    background-color:var(--blue);
 }
 
 #createPostSubmit:active{
     color:rgb(16, 181, 236);
     background-color: white;
 }
-

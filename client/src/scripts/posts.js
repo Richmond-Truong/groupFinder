@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
+import { Divider, Header, Segment } from 'semantic-ui-react';
 
 
 class Post extends Component {
@@ -27,7 +27,7 @@ class Post extends Component {
 
     render() {
         return (
-            <div>
+            <Segment vertical color='red' id='test'>
                 <Header block id="area">
                     <Header id="header1">
                         <h1 id="title1">
@@ -53,8 +53,7 @@ class Post extends Component {
                         </div>
                     </Header>
                 </Header>
-
-            </div>
+            </Segment>
         );
     }
 }
