@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Post from './posts';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { Advertisement, Header, Grid, Rail} from 'semantic-ui-react';
 
 class ProjectsPage extends Component {
     /**
@@ -85,13 +86,14 @@ class ProjectsPage extends Component {
         }else {
             return (
                 <div className="page">
-                    
-                    
-                
-                    {this.posts_list}
-                    <div class="ui wide skyscraper test ad" data-text="Wide Skyscraper" style={{position:"absolute", 
-                        width:"15%", right:"10px", top:"0px"}}></div>
-                    
+                    <Grid centered columns={3} style={{top:'15%'}}>
+                        <Grid.Column>
+                            {this.posts_list}
+                            <Rail dividing position='right' size='big'>
+                                <Advertisement unit='medium rectangle' test='Ad Unit 1' />
+                            </Rail>
+                        </Grid.Column>
+                    </Grid>
                 </div>
             )
         }
