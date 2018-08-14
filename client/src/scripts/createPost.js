@@ -47,14 +47,14 @@ class CreatePost extends Component{
                         <Form.Field required id='createPostDescription'>
                             <textarea placeholder='Enter a description'/>
                         </Form.Field>
-                        <Form.Group inline widths='equal' id='createPostMoney'>
+                        <Form.Group inline id='createPostMoney'>
                             <label>Compensation:</label>
                             <Form.Select required options={[
                                 {key:'RevShare', value:'RevShare', text:'RevShare'},
                                 {key:'Paid', value:'Paid', text:'Paid'},
                                 {key:'None', value:'None', text:'None'}
                             ]} placeholder='Select' size='mini' name='compensationMethod' onChange={this.updateCompensation} />
-                            <Form.Button onClick={this.handleClick}> test </Form.Button>
+                            {/*<Form.Button onClick={this.handleClick}> test </Form.Button>*/}
                             <Form.Input disabled={compensationReq} labelPosition='right' text-align='right' type='text' name='compensationAmount' placeholder='Amount' id='compensationAmount' onChange={this.onChange}>
                                 <Label>$</Label>
                                 <input/>
