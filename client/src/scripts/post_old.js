@@ -11,11 +11,10 @@ class Post extends Component {
         this.userName = user;
         this.postTitle = title;
         this.postText = text;
-        this.getJSON = this.getJSON.bind(this);
     }
 
 
-    getJSON() {
+    getJSON = () => {
         /**
          * This function is used to condense the infromation into a JSON string. This will hold all
          * information about the post to be used as strings in other components.

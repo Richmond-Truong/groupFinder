@@ -11,8 +11,6 @@ class ProjectsPage extends Component {
         super(prop);
         this.posts_list = [];
         this.KEY = 0;
-        this.createPost = this.createPost.bind(this);
-        this.storePost = this.storePost.bind(this);
     }
 
     componentDidMount(){
@@ -24,14 +22,14 @@ class ProjectsPage extends Component {
         loading:true
     }
 
-    storePost(key, post) {
+    storePost = (key, post) => {
         /**
          * Save the post to local storage to be used in multipul sessions
          */
         localStorage.setItem(key, post);
-    }
+    };
 
-    createPost(user, title, text) {
+    createPost = (user, title, text) =>{
         /**
          * Will create a post for rendering given the required fields.
          */
@@ -47,7 +45,7 @@ class ProjectsPage extends Component {
         );
     }
 
-    loadData() {
+    loadData = () => {
         /**
          * Function used to fetch data from the server. Sets data variable to hold all necessary information
          * about all the posts stored.
