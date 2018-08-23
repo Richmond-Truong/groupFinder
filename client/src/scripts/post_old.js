@@ -19,7 +19,7 @@ class Post extends Component {
          * This function is used to condense the infromation into a JSON string. This will hold all
          * information about the post to be used as strings in other components.
          */
-        return JSON.stringify({"user": this.userName, "title": this.postTitle, "text":this.postText});
+        return JSON.stringify({ "user": this.userName, "title": this.postTitle, "text": this.postText });
     }
 
     render() {
@@ -30,16 +30,16 @@ class Post extends Component {
                     <img alt="" className="pic" src={require('./../images/sample_user.jpg')} width="100" height="100" />
                     <div>Views: 15</div>
                     <div>Likes: 10 </div>
-                    <br/>
+                    <br />
                     <div className="extra content">
                         <a className="ui tag label">tag1</a>
                         <a className="ui red tag label">tag2</a>
                         <a className="ui teal tag label">tag3</a>
                     </div>
-                    <br/>
+                    <br />
                 </div>
-                <div style={{ flexGrow: 1, position: 'relative', left: '30px'}}>
-                    <div style={{flexGrow: 1, zIndex:'2', position:'relative', right:'-70%', width:"500px"}}>
+                <div style={{ flexGrow: 1, position: 'relative', left: '30px' }}>
+                    <div style={{ flexGrow: 1, zIndex: '2', position: 'relative', right: '-70%', width: "500px" }}>
                         Location: Toronto, ON. Canada
                     </div>
                     <div className="Title">
@@ -48,16 +48,18 @@ class Post extends Component {
                         </h2>
                     </div>
                     <div className="Text">
-                        <div style={{lign:"left", width:"calc(100% - 50px)", position: "relative", wordBreak: "break-all",
-                            wordWrap: "break-word", minHeight:"130px"}}>
+                        <div style={{
+                            lign: "left", width: "calc(100% - 50px)", position: "relative", wordBreak: "break-all",
+                            wordWrap: "break-word", minHeight: "130px"
+                        }}>
                             {this.postText}
-                            <br/>
+                            <br />
                             {"sdfgsdgsdddddddddddddddddddddddddddsfgsfgsgsfsdfsdfssdf\
                             sdfsdfsdsdfsdfsdgsdgsdfgssssssssssssssssssssssssssssssssssssssssdsg"}
                         </div>
 
-                        <div style={{width:"50px", flexGrow: 1, position: 'relative', right:"10px", paddingLeft: "30px"}}>
-                            <h2 style={{color:"green"}}>
+                        <div style={{ width: "50px", flexGrow: 1, position: 'relative', right: "10px", paddingLeft: "30px" }}>
+                            <h2 style={{ color: "green" }}>
                                 40$
                             </h2>
                             <h5> Positions </h5>

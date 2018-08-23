@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import {Button ,  Header , Form, Popup} from 'semantic-ui-react';
+import { Button, Header, Form, Popup } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-function checkPasswords(){
-    if(document.getElementById("form3").value !== document.getElementById("form4").value){
-        document.getElementById("form4").style.backgroundColor="pink"
-        document.getElementById("form3").style.backgroundColor="pink"
+function checkPasswords() {
+    if (document.getElementById("form3").value !== document.getElementById("form4").value) {
+        document.getElementById("form4").style.backgroundColor = "pink"
+        document.getElementById("form3").style.backgroundColor = "pink"
         document.getElementById("clicky2").disabled = true;
     }
-    else{
-        document.getElementById("form4").style.backgroundColor="white"
-        document.getElementById("form3").style.backgroundColor="white"
+    else {
+        document.getElementById("form4").style.backgroundColor = "white"
+        document.getElementById("form3").style.backgroundColor = "white"
         document.getElementById("clicky2").disabled = false;
     }
 }
@@ -20,28 +20,28 @@ class SignUp extends Component {
 
     render() {
         return (
-        <div className="page">
+            <div className="page">
                 <Form id="box">
-                    <Button id = "clicky">
+                    <Button id="clicky">
                         <i class="facebook icon"></i>
                         Login With Facebook
                     </Button>
-                    <Button id = "clicky2">
+                    <Button id="clicky2">
                         Sign Up
                     </Button>
-                    <input type='text' placeholder='Username' className="boxes" id ="form6" maxLength="16"
-                        minLength="2"/>
-                    <input type = 'text' placeholder='Email' className="boxes" id='form7'
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" title="Not a Valid Email"/>
+                    <input type='text' placeholder='Username' className="boxes" id="form6" maxLength="16"
+                        minLength="2" />
+                    <input type='text' placeholder='Email' className="boxes" id='form7'
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" title="Not a Valid Email" />
                     <Popup
-                        trigger={<input type= "password" placeholder = 'Password' className = "boxes" id = "form3"
+                        trigger={<input type="password" placeholder='Password' className="boxes" id="form3"
                             onChange={checkPasswords}
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*['@', '$', '#','!','%','^','*','(',')']).{8,}"
                             title="The password is required to have a special character, number, lowercase, uppercase letter and be 8 letters long." />}
                         content="The password is required to have a special character, number, lowercase, uppercase letter and be 8 letters long."
                         basic
                     />
-                    <input type = "password" placeholder = 'Confirm Password' className = "boxes" id= "form4" onChange={checkPasswords} />
+                    <input type="password" placeholder='Confirm Password' className="boxes" id="form4" onChange={checkPasswords} />
                     <Header id="name">
                         Group Finder
                     </Header>
@@ -59,11 +59,11 @@ class SignUp extends Component {
                         <Link to='/login'> Sign in </Link>
                     </Header>
                 </Form>
-        </div>
+            </div>
 
 
 
-    );
+        );
     }
 }
 

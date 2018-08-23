@@ -13,13 +13,13 @@ class ProjectsPage extends Component {
         this.KEY = 0;
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.loadData();
     }
 
     state = {
         data: [],
-        loading:true
+        loading: true
     }
 
     storePost = (key, post) => {
@@ -29,7 +29,7 @@ class ProjectsPage extends Component {
         localStorage.setItem(key, post);
     };
 
-    createPost = (user, title, text) =>{
+    createPost = (user, title, text) => {
         /**
          * Will create a post for rendering given the required fields.
          */
@@ -57,7 +57,7 @@ class ProjectsPage extends Component {
                 for (i = 0; i < data.length; i++) {
                     this.posts_list.push(this.createPost(data[i]['tags'], data[i]['title'], data[i]['description']));
                 }
-                setTimeout( () => this.setState({ data: this.posts_list, loading:false}), 500);
+                setTimeout(() => this.setState({ data: this.posts_list, loading: false }), 500);
             })
             .catch(err => this.setState({ data: this.createPost("Sample User", this.props.url, err.toString()) }))
     }
@@ -73,14 +73,14 @@ class ProjectsPage extends Component {
                         <i className="notched circle loading icon"></i>
                         <div className="content">
                             <div className="header">
-                            Just one second
+                                Just one second
                             </div>
                             <p>We're fetching that content for you.</p>
                         </div>
                     </div>
                 </div>
             )
-        }else {
+        } else {
             return (
                 <div className="page">
                     {this.posts_list}

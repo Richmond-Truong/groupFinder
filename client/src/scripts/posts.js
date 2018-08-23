@@ -16,12 +16,12 @@ class Post extends Component {
     }
 
 
-    getJSON = () =>{
+    getJSON = () => {
         /**
          * This function is used to condense the infromation into a JSON string. This will hold all
          * information about the post to be used as strings in other components.
          */
-        return JSON.stringify({"user": this.userName, "title": this.postTitle, "text":this.postText});
+        return JSON.stringify({ "user": this.userName, "title": this.postTitle, "text": this.postText });
     }
 
     render() {
@@ -45,7 +45,7 @@ class Post extends Component {
                             ExampleJob Chef
                         </p2>
                         <div id="eg">
-                            <img src={require('../images/sample_user.jpg')} id="pic" alt="profile"/>
+                            <img src={require('../images/sample_user.jpg')} id="pic" alt="profile" />
                             <h3 id="username1">
                                 CrazyEight
                             </h3>

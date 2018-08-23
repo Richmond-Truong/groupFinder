@@ -48,7 +48,7 @@ class TopBar extends Component {
     formData.append('email', this.state.description);
 
     var newdata = '{"_id": "sdfsdfsdfsd", "date": 13424324523, "tags": "newUSER", "title": "' +
-                    this.state.title.toString() + '", "description": "' + this.state.description.toString() + '"}';
+      this.state.title.toString() + '", "description": "' + this.state.description.toString() + '"}';
     console.log(JSON.parse(newdata));
     this.closeModal();
     return fetch('https://groupfinder1.herokuapp.com/post', {
@@ -69,9 +69,9 @@ class TopBar extends Component {
     return (
 
       <div className="ui inverted menu" id="topnav">
-          <Link to='/login' className="active item" > Login / Signup </Link>
-          <Link to='/' className="active item"> Home </Link>
-          <Link to='/createpost' className="active item" > Make Post </Link>
+        <Link to='/login' className="active item" > Login / Signup </Link>
+        <Link to='/' className="active item"> Home </Link>
+        <Link to='/createpost' className="active item" > Make Post </Link>
       </div>
     );
   }

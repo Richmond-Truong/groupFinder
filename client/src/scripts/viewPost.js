@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Post from './post_old.js';
-import {Advertisement, Button, Card, Comment, Divider, Item, Form, Header, Image, Label, Rail, Segment} from 'semantic-ui-react';
+import { Advertisement, Button, Card, Comment, Divider, Item, Form, Header, Image, Label, Rail, Segment } from 'semantic-ui-react';
 
 class Comments extends Component {
     /**
@@ -21,7 +21,7 @@ class Comments extends Component {
     render() {
         return (
             <Comment>
-                <Comment.Avatar as='a' src={require('./../images/sample_user.jpg')}/>
+                <Comment.Avatar as='a' src={require('./../images/sample_user.jpg')} />
                 <Comment.Content>
                     <Comment.Author as='a'>
                         {this.userName}
@@ -83,7 +83,7 @@ class PostPage extends Component {
     render() {
         return (
             <div className="page">
-                <Segment raised padded style={{width:'36.75%', margin:'auto', marginTop:'70px'}} >
+                <Segment raised padded style={{ width: '36.75%', margin: 'auto', marginTop: '70px' }} >
                     {/* Div holding profile bio and info.  */}
                     <Rail position='left' style={{ width: '40%' }}>
                         <Card>
@@ -110,7 +110,7 @@ class PostPage extends Component {
                             <Item.Header as='h3'>
                                 {this.savedpost.postTitle}
                             </Item.Header>
-                            <Divider/>
+                            <Divider />
                             <Item.Description>
                                 {this.savedpost.postText}
                             </Item.Description>
@@ -121,7 +121,7 @@ class PostPage extends Component {
                         <Advertisement unit='medium rectangle' test='Ad Unit 1' />
                     </Rail>
                 </Segment>
-                <Segment raised padded style={{width:'36.75%', margin:'auto', marginTop:'10px'}} >
+                <Segment raised padded style={{ width: '36.75%', margin: 'auto', marginTop: '10px' }} >
                     <Header as='h3' dividing>
                         Comments
                     </Header>
@@ -129,8 +129,8 @@ class PostPage extends Component {
                         {this.state.data}
                     </Comment.Group>
                     <Form reply>
-                        <Form.TextArea name="commentArea" onChange={this.onChange}/>
-                        <Button content='Add Comment' labelPosition='left' icon='edit' primary onClick={() => this.createNewComment()}/>
+                        <Form.TextArea name="commentArea" onChange={this.onChange} />
+                        <Button content='Add Comment' labelPosition='left' icon='edit' primary onClick={() => this.createNewComment()} />
                     </Form>
                 </Segment>
             </div>
