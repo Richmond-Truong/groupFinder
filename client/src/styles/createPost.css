@@ -1,12 +1,12 @@
 @import "root.css";
 
 #createPostBox{
-    width: 900px;
+    width: 70%;
     height: 790px;
     background-color: white;
     position:absolute;
     top                   : 5%;
-    left                  : 25%;
+    left                  : 15%;
     right                 : auto;
     bottom                : auto;
 }
@@ -18,7 +18,7 @@
 #createPostTitle{
     font-size: 16px;
     font-family: 'Lato', sans-serif;
-    min-width: 820px;
+    min-width: 100%;
 }
 
 #createPostDescription{
