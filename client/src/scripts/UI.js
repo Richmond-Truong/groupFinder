@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 class TopBar extends Component {
   /**
-   * Class that represents the UI component that will be displayed on every page. 
-   * This includes the modals for creating a post and login to the server. 
+   * Class that represents the UI component that will be displayed on every page.
+   * This includes the modals for creating a post and login to the server.
    */
   state = {
     modalOn: null,
@@ -35,10 +35,10 @@ class TopBar extends Component {
     return (name === this.state.modalOn);
   }
 
-  
+
   createNewPost = () => {
     /**
-     * Used to handle POST reequest for new Posting 
+     * Used to handle POST reequest for new Posting
      */
     console.log("CREATING NEW POST: " + this.state.title + " , " + this.state.description);
 
@@ -47,8 +47,8 @@ class TopBar extends Component {
     formData.append('last_name', this.state.title);
     formData.append('email', this.state.description);
 
-    var newdata = '{"_id": "sdfsdfsdfsd", "date": 13424324523, "tags": "newUSER", "title": "' + 
-                    this.state.title.toString() + '", "description": "' + this.state.description.toString() + '"}';
+    var newdata = '{"_id": "sdfsdfsdfsd", "date": 13424324523, "tags": "newUSER", "title": "' +
+      this.state.title.toString() + '", "description": "' + this.state.description.toString() + '"}';
     console.log(JSON.parse(newdata));
     this.closeModal();
     return fetch('https://groupfinder1.herokuapp.com/post', {
@@ -67,18 +67,11 @@ class TopBar extends Component {
   render() {
 
     return (
-  
+
       <div className="ui inverted menu" id="topnav">
-          <Link to='/login' className="active item" > Login / Signup </Link>
-          <Link to='/' className="active item"> Home </Link>
-          <Link to='/createpost' className="active item" > Make Post </Link>
-          <div className="ui category search" style={{position:"absolute", right:"0px"}}>
-            <div className="ui icon input">
-              <input className="prompt" placeholder="Search posts..." type="text"/>
-              <i className="search icon"></i>
-            </div>
-            <div className="results"></div>
-          </div>
+        <Link to='/login' className="active item" > Login / Signup </Link>
+        <Link to='/' className="active item"> Home </Link>
+        <Link to='/createpost' className="active item" > Make Post </Link>
       </div>
     );
   }

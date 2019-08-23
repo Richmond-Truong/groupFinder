@@ -1,11 +1,5 @@
 @import "root.css";
 
-html, body{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
 .page {
     z-index: 0;
     position: absolute;
@@ -13,29 +7,50 @@ html, body{
     height: calc(100% - 40px);
     align-content: center;
     overflow-y: scroll;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     margin-top: -15px;
-    background-color: var(--light-blue);
+    background-color: var(--light-grey);
+}
+
+.post {
+    top: 50px;
+    left:10%;
+    position: relative;
+    max-width: 80%;
+    min-height:100px;
+    background: white;
+    transition: 0.5s;
+    display: flex;
+    border-bottom: solid 2px black;
+    box-shadow: 1px 10px 10px 1px grey;
+    animation: shiftRight 1s;
+}
+
+/* Standard syntax */
+@keyframes shiftRight {
+    0%   {left:0px}
+    100%  {left:10%}
+}
+
+@keyframes example {
+    0%   {left:0px}
+    100%  {left:5%}
 }
 
 
-
-
 #area{
-    width: 1325px;    
+    width: 90%;
     height:220px;
     position:relative;
     left:50%;
-    top: 50%;
-    transform: translate(-50%,0%);
     background-color:white;
-
+    animation: example 1s;
 }
 
 #header1{
     width:1250px;
     height:200px;
-    background-color:white;
+    background-color:var(--white);
     position:relative;
     left:1%;
 }
@@ -49,6 +64,27 @@ html, body{
     left:-0.5%;
     display:block;
     margin: 0 auto;
+
+}
+
+.post .Stats {
+    height: 100%;
+    width: 150px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 9px;
+}
+.post .Title{
+    max-width:95%;
+    font-family: "Verdana";
+    left: 200px;
+}
+.post .Text{
+    max-width: calc(100% - 150px);
+    position: relative;
+    min-height:130px;
+    display: flex;
+    flex-direction: row;
 }
 
 #roles{
@@ -57,6 +93,8 @@ html, body{
     top:40%;
     font-size:17px;
     word-spacing:10000px;
+
+    background-color: darkorchid;
 }
 
 
@@ -64,11 +102,15 @@ html, body{
     font-size:11px;
     color:black;
     transform:translate(0%,-210%);
+
+    background-color: honeydew;
 }
 
 #eg{
     text-align:center;
     width:90px;
+
+    background-color: saddlebrown;
 }
 
 #cost1{
@@ -76,6 +118,8 @@ html, body{
     left:90.5%;
     top:-20%;
     color:green;
+
+    background-color: cadetblue;
 }
 
 #location{
@@ -84,6 +128,8 @@ html, body{
     top:-33%;
     font-size:20px;
     width:130px;
+
+    background-color: sienna
 }
 
 #title1{
@@ -93,6 +139,8 @@ html, body{
     font-size:23px;
     color:black;
     font-weight: bold;
+
+    background-color: aquamarine;
 }
 
 #paragraph1{
@@ -105,5 +153,5 @@ html, body{
     overflow:hidden;
     height:90px;
 
+    background-color: darkgray
 }
-

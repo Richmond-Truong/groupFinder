@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import Post from './posts.js';
-import {Advertisement, Button, Card, Comment, Divider, Item, Form, Header, Image, Label, Rail, Segment} from 'semantic-ui-react';
-var COMMENT_COUNT = 0;
+import Post from './post_old.js';
+import { Advertisement, Button, Card, Comment, Divider, Item, Form, Header, Image, Label, Rail, Segment } from 'semantic-ui-react';
 
 class Comments extends Component {
-    /** 
-     * A class to represent the comments made to a posting. 
-     * Contains a user, details and position to refer to the 
-     * number of indents to include when displaying. 
-     * In addition there is children to refer to any reponses 
-     * made to a comment. 
+    /**
+     * A class to represent the comments made to a posting.
+     * Contains a user, details and position to refer to the
+     * number of indents to include when displaying.
+     * In addition there is children to refer to any reponses
+     * made to a comment.
      */
     constructor(user, position, text) {
         super();
         this.userName = user;
         this.pos = { left: position };
         this.postText = text;
-        COMMENT_COUNT++;
     }
 
 
     render() {
         return (
             <Comment>
-                <Comment.Avatar as='a' src={require('./../images/sample_user.jpg')}/>
+                <Comment.Avatar as='a' src={require('./../images/sample_user.jpg')} />
                 <Comment.Content>
                     <Comment.Author as='a'>
                         {this.userName}
@@ -32,7 +30,7 @@ class Comments extends Component {
                         {this.postText}
                     </Comment.Text>
                 </Comment.Content>
-                {/** 
+                {/**
                   * We have removed replies for now so we have removed the children of comments
                   *
                     <div className="comment">
@@ -46,7 +44,7 @@ class Comments extends Component {
 
 class PostPage extends Component {
     /**
-     * This class represents the page used to view specefic details about the 
+     * This class represents the page used to view specefic details about the
      * project posting. Users can comment about the posting and view details.
      */
     state = {
@@ -72,8 +70,8 @@ class PostPage extends Component {
 
     createNewComment() {
         /**
-         * Function used for when a new comment is ment to be created. 
-         * Takes a text block about the information in the comment. 
+         * Function used for when a new comment is ment to be created.
+         * Takes a text block about the information in the comment.
          */
         let comments = [...this.state.data];
         comments.push(new Comments('USER', '100px', this.state.commentArea).render());
@@ -85,7 +83,7 @@ class PostPage extends Component {
     render() {
         return (
             <div className="page">
-                <Segment raised padded style={{width:'36.75%', margin:'auto', marginTop:'70px'}} >
+                <Segment raised padded style={{ width: '36.75%', margin: 'auto', marginTop: '70px' }} >
                     {/* Div holding profile bio and info.  */}
                     <Rail position='left' style={{ width: '40%' }}>
                         <Card>
@@ -112,7 +110,7 @@ class PostPage extends Component {
                             <Item.Header as='h3'>
                                 {this.savedpost.postTitle}
                             </Item.Header>
-                            <Divider/>
+                            <Divider />
                             <Item.Description>
                                 {this.savedpost.postText}
                             </Item.Description>
@@ -123,7 +121,7 @@ class PostPage extends Component {
                         <Advertisement unit='medium rectangle' test='Ad Unit 1' />
                     </Rail>
                 </Segment>
-                <Segment raised padded style={{width:'36.75%', margin:'auto', marginTop:'10px'}} >
+                <Segment raised padded style={{ width: '36.75%', margin: 'auto', marginTop: '10px' }} >
                     <Header as='h3' dividing>
                         Comments
                     </Header>
@@ -131,8 +129,8 @@ class PostPage extends Component {
                         {this.state.data}
                     </Comment.Group>
                     <Form reply>
-                        <Form.TextArea name="commentArea" onChange={this.onChange}/>
-                        <Button content='Add Comment' labelPosition='left' icon='edit' primary onClick={() => this.createNewComment()}/>
+                        <Form.TextArea name="commentArea" onChange={this.onChange} />
+                        <Button content='Add Comment' labelPosition='left' icon='edit' primary onClick={() => this.createNewComment()} />
                     </Form>
                 </Segment>
             </div>
@@ -140,4 +138,4 @@ class PostPage extends Component {
     }
 }
 
-export default PostPage; 
+export default PostPage;

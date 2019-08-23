@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header } from 'semantic-ui-react';
+import { Divider, Header, Segment } from 'semantic-ui-react';
 
 
 class Post extends Component {
@@ -8,27 +8,25 @@ class Post extends Component {
      * Post will hold information about the project, such as the user who posted
      * title and text information.
      */
-
     constructor(user, title, text) {
         super();
         this.userName = user;
         this.postTitle = title;
         this.postText = text;
-        this.getJSON = this.getJSON.bind(this);
     }
 
 
-    getJSON() {
+    getJSON = () => {
         /**
          * This function is used to condense the infromation into a JSON string. This will hold all
          * information about the post to be used as strings in other components.
          */
-        return JSON.stringify({"user": this.userName, "title": this.postTitle, "text":this.postText});
+        return JSON.stringify({ "user": this.userName, "title": this.postTitle, "text": this.postText });
     }
 
     render() {
         return (
-            <div>
+            <Segment vertical color='red' id='test'>
                 <Header block id="area">
                     <Header id="header1">
                         <h1 id="title1">
@@ -47,18 +45,16 @@ class Post extends Component {
                             ExampleJob Chef
                         </p2>
                         <div id="eg">
-                            <img src={require('../images/sample_user.jpg')} id="pic"/>
+                            <img src={require('../images/sample_user.jpg')} id="pic" alt="profile" />
                             <h3 id="username1">
                                 CrazyEight
                             </h3>
                         </div>
                     </Header>
                 </Header>
-
-            </div>
+            </Segment>
         );
     }
-
 }
 
 export default Post;
